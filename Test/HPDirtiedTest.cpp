@@ -24,7 +24,7 @@ static void _dirtied(HPNodeRef node) {
   (*dirtiedCount)++;
 }
 
-TEST_CASE( dirtied) {
+TEST_CASE( "dirtied") {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
   HPNodeStyleSetWidth(root, 100);
@@ -36,18 +36,18 @@ TEST_CASE( dirtied) {
   root->setContext(&dirtiedCount);
   root->setDirtiedFunc(_dirtied);
 
-  ASSERT_EQ(0, dirtiedCount);
+  REQUIRE_EQ(0, dirtiedCount);
 
   // `_dirtied` MUST be called in case of explicit dirtying.
   root->setDirty(true);
-  ASSERT_EQ(1, dirtiedCount);
+  REQUIRE_EQ(1, dirtiedCount);
 
   // `_dirtied` MUST be called ONCE.
   root->setDirty(true);
-  ASSERT_EQ(1, dirtiedCount);
+  REQUIRE_EQ(1, dirtiedCount);
 }
 
-TEST_CASE( dirtied_propagation) {
+TEST_CASE( "dirtied_propagation") {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
   HPNodeStyleSetWidth(root, 100);
@@ -69,18 +69,18 @@ TEST_CASE( dirtied_propagation) {
   root->setContext(&dirtiedCount);
   root->setDirtiedFunc(_dirtied);
 
-  ASSERT_EQ(0, dirtiedCount);
+  REQUIRE_EQ(0, dirtiedCount);
 
   // `_dirtied` MUST be called for the first time.
   root_child0->markAsDirty();
-  ASSERT_EQ(1, dirtiedCount);
+  REQUIRE_EQ(1, dirtiedCount);
 
   // `_dirtied` must NOT be called for the second time.
   root_child0->markAsDirty();
-  ASSERT_EQ(1, dirtiedCount);
+  REQUIRE_EQ(1, dirtiedCount);
 }
 
-TEST_CASE( dirtied_hierarchy) {
+TEST_CASE( "dirtied_hierarchy") {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
   HPNodeStyleSetWidth(root, 100);
@@ -102,17 +102,18 @@ TEST_CASE( dirtied_hierarchy) {
   root_child0->setContext(&dirtiedCount);
   root_child0->setDirtiedFunc(_dirtied);
 
-  ASSERT_EQ(0, dirtiedCount);
+  REQUIRE_EQ(0, dirtiedCount);
 
   // `_dirtied` must NOT be called for descendants.
   root->markAsDirty();
-  ASSERT_EQ(0, dirtiedCount);
+  REQUIRE_EQ(0, dirtiedCount);
 
   // `_dirtied` must NOT be called for the sibling node.
   root_child1->markAsDirty();
-  ASSERT_EQ(0, dirtiedCount);
+  REQUIRE_EQ(0, dirtiedCount);
 
   // `_dirtied` MUST be called in case of explicit dirtying.
   root_child0->markAsDirty();
-  ASSERT_EQ(1, dirtiedCount);
+  REQUIRE_EQ(1, dirtiedCount);
+  REQUIRE_EQ(1, dirtiedCount);
 }

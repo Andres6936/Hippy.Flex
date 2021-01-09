@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-TEST_CASE( wrap_child) {
+TEST_CASE( "wrap_child") {
 
   const HPNodeRef root = HPNodeNew();
 
@@ -55,7 +55,7 @@ TEST_CASE( wrap_child) {
 
 }
 
-TEST_CASE( wrap_grandchild) {
+TEST_CASE( "wrap_grandchild") {
 
   const HPNodeRef root = HPNodeNew();
 
