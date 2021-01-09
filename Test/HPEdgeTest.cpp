@@ -32,12 +32,12 @@ TEST_CASE( start_overrides) {
   HPNodeInsertChild(root, root_child0, 0);
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_FLOAT_EQ(20, HPNodeLayoutGetRight(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetLeft(root_child0));
+  CHECK_EQ(20, HPNodeLayoutGetRight(root_child0));
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionRTL);
-  ASSERT_FLOAT_EQ(20, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetRight(root_child0));
+  CHECK_EQ(20, HPNodeLayoutGetLeft(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetRight(root_child0));
 
   HPNodeFreeRecursive(root);
 }
@@ -55,12 +55,12 @@ TEST_CASE( end_overrides) {
   HPNodeInsertChild(root, root_child0, 0);
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
-  ASSERT_FLOAT_EQ(20, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetRight(root_child0));
+  CHECK_EQ(20, HPNodeLayoutGetLeft(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetRight(root_child0));
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionRTL);
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_FLOAT_EQ(20, HPNodeLayoutGetRight(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetLeft(root_child0));
+  CHECK_EQ(20, HPNodeLayoutGetRight(root_child0));
 
   HPNodeFreeRecursive(root);
 }
@@ -78,8 +78,8 @@ TEST_CASE( horizontal_overridden) {
   HPNodeInsertChild(root, root_child0, 0);
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
-  ASSERT_FLOAT_EQ(20, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetRight(root_child0));
+  CHECK_EQ(20, HPNodeLayoutGetLeft(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetRight(root_child0));
 
   HPNodeFreeRecursive(root);
 }
@@ -97,8 +97,8 @@ TEST_CASE( vertical_overridden) {
   HPNodeInsertChild(root, root_child0, 0);
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
-  ASSERT_FLOAT_EQ(20, HPNodeLayoutGetTop(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetBottom(root_child0));
+  CHECK_EQ(20, HPNodeLayoutGetTop(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetBottom(root_child0));
 
   HPNodeFreeRecursive(root);
 }
@@ -116,10 +116,10 @@ TEST_CASE( horizontal_overrides_all) {
   HPNodeInsertChild(root, root_child0, 0);
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_FLOAT_EQ(20, HPNodeLayoutGetTop(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetRight(root_child0));
-  ASSERT_FLOAT_EQ(20, HPNodeLayoutGetBottom(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetLeft(root_child0));
+  CHECK_EQ(20, HPNodeLayoutGetTop(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetRight(root_child0));
+  CHECK_EQ(20, HPNodeLayoutGetBottom(root_child0));
 
   HPNodeFreeRecursive(root);
 }
@@ -137,10 +137,10 @@ TEST_CASE( vertical_overrides_all) {
   HPNodeInsertChild(root, root_child0, 0);
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
-  ASSERT_FLOAT_EQ(20, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetTop(root_child0));
-  ASSERT_FLOAT_EQ(20, HPNodeLayoutGetRight(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetBottom(root_child0));
+  CHECK_EQ(20, HPNodeLayoutGetLeft(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetTop(root_child0));
+  CHECK_EQ(20, HPNodeLayoutGetRight(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetBottom(root_child0));
 
   HPNodeFreeRecursive(root);
 }
@@ -161,10 +161,10 @@ TEST_CASE( all_overridden) {
   HPNodeInsertChild(root, root_child0, 0);
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetTop(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetRight(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetBottom(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetLeft(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetTop(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetRight(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetBottom(root_child0));
 
   HPNodeFreeRecursive(root);
 }

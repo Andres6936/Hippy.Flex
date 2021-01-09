@@ -28,17 +28,17 @@ TEST_CASE( padding_no_size) {
   HPNodeStyleSetPadding(root, CSSBottom, 10);
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetLeft(root));
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetTop(root));
-  ASSERT_FLOAT_EQ(20, HPNodeLayoutGetWidth(root));
-  ASSERT_FLOAT_EQ(20, HPNodeLayoutGetHeight(root));
+  CHECK_EQ(0, HPNodeLayoutGetLeft(root));
+  CHECK_EQ(0, HPNodeLayoutGetTop(root));
+  CHECK_EQ(20, HPNodeLayoutGetWidth(root));
+  CHECK_EQ(20, HPNodeLayoutGetHeight(root));
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionRTL);
 
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetLeft(root));
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetTop(root));
-  ASSERT_FLOAT_EQ(20, HPNodeLayoutGetWidth(root));
-  ASSERT_FLOAT_EQ(20, HPNodeLayoutGetHeight(root));
+  CHECK_EQ(0, HPNodeLayoutGetLeft(root));
+  CHECK_EQ(0, HPNodeLayoutGetTop(root));
+  CHECK_EQ(20, HPNodeLayoutGetWidth(root));
+  CHECK_EQ(20, HPNodeLayoutGetHeight(root));
 
   HPNodeFreeRecursive(root);
 
@@ -58,27 +58,27 @@ TEST_CASE( padding_container_match_child) {
   HPNodeInsertChild(root, root_child0, 0);
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetLeft(root));
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetTop(root));
-  ASSERT_FLOAT_EQ(30, HPNodeLayoutGetWidth(root));
-  ASSERT_FLOAT_EQ(30, HPNodeLayoutGetHeight(root));
+  CHECK_EQ(0, HPNodeLayoutGetLeft(root));
+  CHECK_EQ(0, HPNodeLayoutGetTop(root));
+  CHECK_EQ(30, HPNodeLayoutGetWidth(root));
+  CHECK_EQ(30, HPNodeLayoutGetHeight(root));
 
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetTop(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetWidth(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetHeight(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetLeft(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetTop(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetWidth(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetHeight(root_child0));
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionRTL);
 
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetLeft(root));
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetTop(root));
-  ASSERT_FLOAT_EQ(30, HPNodeLayoutGetWidth(root));
-  ASSERT_FLOAT_EQ(30, HPNodeLayoutGetHeight(root));
+  CHECK_EQ(0, HPNodeLayoutGetLeft(root));
+  CHECK_EQ(0, HPNodeLayoutGetTop(root));
+  CHECK_EQ(30, HPNodeLayoutGetWidth(root));
+  CHECK_EQ(30, HPNodeLayoutGetHeight(root));
 
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetTop(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetWidth(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetHeight(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetLeft(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetTop(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetWidth(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetHeight(root_child0));
 
   HPNodeFreeRecursive(root);
 
@@ -100,27 +100,27 @@ TEST_CASE( padding_flex_child) {
   HPNodeInsertChild(root, root_child0, 0);
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetLeft(root));
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetTop(root));
-  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetWidth(root));
-  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetHeight(root));
+  CHECK_EQ(0, HPNodeLayoutGetLeft(root));
+  CHECK_EQ(0, HPNodeLayoutGetTop(root));
+  CHECK_EQ(100, HPNodeLayoutGetWidth(root));
+  CHECK_EQ(100, HPNodeLayoutGetHeight(root));
 
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetTop(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetWidth(root_child0));
-  ASSERT_FLOAT_EQ(80, HPNodeLayoutGetHeight(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetLeft(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetTop(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetWidth(root_child0));
+  CHECK_EQ(80, HPNodeLayoutGetHeight(root_child0));
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionRTL);
 
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetLeft(root));
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetTop(root));
-  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetWidth(root));
-  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetHeight(root));
+  CHECK_EQ(0, HPNodeLayoutGetLeft(root));
+  CHECK_EQ(0, HPNodeLayoutGetTop(root));
+  CHECK_EQ(100, HPNodeLayoutGetWidth(root));
+  CHECK_EQ(100, HPNodeLayoutGetHeight(root));
 
-  ASSERT_FLOAT_EQ(80, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetTop(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetWidth(root_child0));
-  ASSERT_FLOAT_EQ(80, HPNodeLayoutGetHeight(root_child0));
+  CHECK_EQ(80, HPNodeLayoutGetLeft(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetTop(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetWidth(root_child0));
+  CHECK_EQ(80, HPNodeLayoutGetHeight(root_child0));
 
   HPNodeFreeRecursive(root);
 
@@ -141,27 +141,27 @@ TEST_CASE( padding_stretch_child) {
   HPNodeInsertChild(root, root_child0, 0);
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetLeft(root));
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetTop(root));
-  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetWidth(root));
-  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetHeight(root));
+  CHECK_EQ(0, HPNodeLayoutGetLeft(root));
+  CHECK_EQ(0, HPNodeLayoutGetTop(root));
+  CHECK_EQ(100, HPNodeLayoutGetWidth(root));
+  CHECK_EQ(100, HPNodeLayoutGetHeight(root));
 
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetTop(root_child0));
-  ASSERT_FLOAT_EQ(80, HPNodeLayoutGetWidth(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetHeight(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetLeft(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetTop(root_child0));
+  CHECK_EQ(80, HPNodeLayoutGetWidth(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetHeight(root_child0));
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionRTL);
 
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetLeft(root));
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetTop(root));
-  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetWidth(root));
-  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetHeight(root));
+  CHECK_EQ(0, HPNodeLayoutGetLeft(root));
+  CHECK_EQ(0, HPNodeLayoutGetTop(root));
+  CHECK_EQ(100, HPNodeLayoutGetWidth(root));
+  CHECK_EQ(100, HPNodeLayoutGetHeight(root));
 
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetTop(root_child0));
-  ASSERT_FLOAT_EQ(80, HPNodeLayoutGetWidth(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetHeight(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetLeft(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetTop(root_child0));
+  CHECK_EQ(80, HPNodeLayoutGetWidth(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetHeight(root_child0));
 
   HPNodeFreeRecursive(root);
 
@@ -184,27 +184,27 @@ TEST_CASE( padding_center_child) {
   HPNodeInsertChild(root, root_child0, 0);
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetLeft(root));
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetTop(root));
-  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetWidth(root));
-  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetHeight(root));
+  CHECK_EQ(0, HPNodeLayoutGetLeft(root));
+  CHECK_EQ(0, HPNodeLayoutGetTop(root));
+  CHECK_EQ(100, HPNodeLayoutGetWidth(root));
+  CHECK_EQ(100, HPNodeLayoutGetHeight(root));
 
-  ASSERT_FLOAT_EQ(40, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_FLOAT_EQ(35, HPNodeLayoutGetTop(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetWidth(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetHeight(root_child0));
+  CHECK_EQ(40, HPNodeLayoutGetLeft(root_child0));
+  CHECK_EQ(35, HPNodeLayoutGetTop(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetWidth(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetHeight(root_child0));
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionRTL);
 
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetLeft(root));
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetTop(root));
-  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetWidth(root));
-  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetHeight(root));
+  CHECK_EQ(0, HPNodeLayoutGetLeft(root));
+  CHECK_EQ(0, HPNodeLayoutGetTop(root));
+  CHECK_EQ(100, HPNodeLayoutGetWidth(root));
+  CHECK_EQ(100, HPNodeLayoutGetHeight(root));
 
-  ASSERT_FLOAT_EQ(50, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_FLOAT_EQ(35, HPNodeLayoutGetTop(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetWidth(root_child0));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetHeight(root_child0));
+  CHECK_EQ(50, HPNodeLayoutGetLeft(root_child0));
+  CHECK_EQ(35, HPNodeLayoutGetTop(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetWidth(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetHeight(root_child0));
 
   HPNodeFreeRecursive(root);
 
@@ -228,27 +228,27 @@ TEST_CASE( child_with_padding_align_end) {
   HPNodeInsertChild(root, root_child0, 0);
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetLeft(root));
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetTop(root));
-  ASSERT_FLOAT_EQ(200, HPNodeLayoutGetWidth(root));
-  ASSERT_FLOAT_EQ(200, HPNodeLayoutGetHeight(root));
+  CHECK_EQ(0, HPNodeLayoutGetLeft(root));
+  CHECK_EQ(0, HPNodeLayoutGetTop(root));
+  CHECK_EQ(200, HPNodeLayoutGetWidth(root));
+  CHECK_EQ(200, HPNodeLayoutGetHeight(root));
 
-  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetTop(root_child0));
-  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetWidth(root_child0));
-  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetHeight(root_child0));
+  CHECK_EQ(100, HPNodeLayoutGetLeft(root_child0));
+  CHECK_EQ(100, HPNodeLayoutGetTop(root_child0));
+  CHECK_EQ(100, HPNodeLayoutGetWidth(root_child0));
+  CHECK_EQ(100, HPNodeLayoutGetHeight(root_child0));
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionRTL);
 
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetLeft(root));
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetTop(root));
-  ASSERT_FLOAT_EQ(200, HPNodeLayoutGetWidth(root));
-  ASSERT_FLOAT_EQ(200, HPNodeLayoutGetHeight(root));
+  CHECK_EQ(0, HPNodeLayoutGetLeft(root));
+  CHECK_EQ(0, HPNodeLayoutGetTop(root));
+  CHECK_EQ(200, HPNodeLayoutGetWidth(root));
+  CHECK_EQ(200, HPNodeLayoutGetHeight(root));
 
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetTop(root_child0));
-  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetWidth(root_child0));
-  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetHeight(root_child0));
+  CHECK_EQ(0, HPNodeLayoutGetLeft(root_child0));
+  CHECK_EQ(100, HPNodeLayoutGetTop(root_child0));
+  CHECK_EQ(100, HPNodeLayoutGetWidth(root_child0));
+  CHECK_EQ(100, HPNodeLayoutGetHeight(root_child0));
 
   HPNodeFreeRecursive(root);
 

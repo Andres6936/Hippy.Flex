@@ -33,7 +33,7 @@
 //  HPNodeDoLayout(root, 100, VALUE_UNDEFINED);
 //  HPNodeDoLayout(root, 100, 100);
 //
-//  ASSERT_FLOAT_EQ(100, HPNodeLayoutGetHeight(root_child0));
+//  CHECK_EQ(100, HPNodeLayoutGetHeight(root_child0));
 //
 //  HPNodeFreeRecursive(root);
 //
@@ -49,12 +49,12 @@ TEST_CASE( recalculate_resolvedDimonsion_onchange) {
   HPNodeInsertChild(root, root_child0, 0);
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetHeight(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetHeight(root_child0));
 
   HPNodeStyleSetMinHeight(root_child0, VALUE_UNDEFINED);
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetHeight(root_child0));
+  CHECK_EQ(0, HPNodeLayoutGetHeight(root_child0));
 
   HPNodeFreeRecursive(root);
 }

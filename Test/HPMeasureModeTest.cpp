@@ -67,7 +67,7 @@ static HPSize _measure(HPNodeRef node, float width, MeasureMode widthMode,
 
   ASSERT_EQ(1, constraintList.length);
 
-  ASSERT_FLOAT_EQ(100, constraintList.constraints[0].width);
+  CHECK_EQ(100, constraintList.constraints[0].width);
   ASSERT_EQ(MeasureModeExactly, constraintList.constraints[0].widthMode);
 
   free(constraintList.constraints);
@@ -94,7 +94,7 @@ TEST_CASE( exactly_measure_stretched_child_row) {
 
   ASSERT_EQ(1, constraintList.length);
 
-  ASSERT_FLOAT_EQ(100, constraintList.constraints[0].height);
+  CHECK_EQ(100, constraintList.constraints[0].height);
   ASSERT_EQ(MeasureModeExactly, constraintList.constraints[0].heightMode);
 
   free(constraintList.constraints);
@@ -119,7 +119,7 @@ TEST_CASE( at_most_main_axis_column) {
 
   ASSERT_EQ(1, constraintList.length);
 
-  ASSERT_FLOAT_EQ(100, constraintList.constraints[0].height);
+  CHECK_EQ(100, constraintList.constraints[0].height);
   ASSERT_EQ(MeasureModeAtMost, constraintList.constraints[0].heightMode);
 
   free(constraintList.constraints);
@@ -145,7 +145,7 @@ TEST_CASE( at_most_cross_axis_column) {
 
   ASSERT_EQ(1, constraintList.length);
 
-  ASSERT_FLOAT_EQ(100, constraintList.constraints[0].width);
+  CHECK_EQ(100, constraintList.constraints[0].width);
   ASSERT_EQ(MeasureModeAtMost, constraintList.constraints[0].widthMode);
 
   free(constraintList.constraints);
@@ -171,7 +171,7 @@ TEST_CASE( at_most_main_axis_row) {
 
   ASSERT_EQ(1, constraintList.length);
 
-  ASSERT_FLOAT_EQ(100, constraintList.constraints[0].width);
+  CHECK_EQ(100, constraintList.constraints[0].width);
   ASSERT_EQ(MeasureModeAtMost, constraintList.constraints[0].widthMode);
 
   free(constraintList.constraints);
@@ -198,7 +198,7 @@ TEST_CASE( at_most_cross_axis_row) {
 
   ASSERT_EQ(1, constraintList.length);
 
-  ASSERT_FLOAT_EQ(100, constraintList.constraints[0].height);
+  CHECK_EQ(100, constraintList.constraints[0].height);
   ASSERT_EQ(MeasureModeAtMost, constraintList.constraints[0].heightMode);
 
   free(constraintList.constraints);
@@ -223,10 +223,10 @@ TEST_CASE( flex_child) {
 
   ASSERT_EQ(2, constraintList.length);
 
-  ASSERT_FLOAT_EQ(100, constraintList.constraints[0].height);
+  CHECK_EQ(100, constraintList.constraints[0].height);
   ASSERT_EQ(MeasureModeAtMost, constraintList.constraints[0].heightMode);
 
-  ASSERT_FLOAT_EQ(100, constraintList.constraints[1].height);
+  CHECK_EQ(100, constraintList.constraints[1].height);
   ASSERT_EQ(MeasureModeExactly, constraintList.constraints[1].heightMode);
 
   free(constraintList.constraints);
@@ -252,7 +252,7 @@ TEST_CASE( flex_child_with_flex_basis) {
 
   ASSERT_EQ(1, constraintList.length);
 
-  ASSERT_FLOAT_EQ(100, constraintList.constraints[0].height);
+  CHECK_EQ(100, constraintList.constraints[0].height);
   ASSERT_EQ(MeasureModeExactly, constraintList.constraints[0].heightMode);
 
   free(constraintList.constraints);
@@ -279,7 +279,7 @@ TEST_CASE( overflow_scroll_column) {
 
   ASSERT_EQ(1, constraintList.length);
 
-  ASSERT_FLOAT_EQ(100, constraintList.constraints[0].width);
+  CHECK_EQ(100, constraintList.constraints[0].width);
   ASSERT_EQ(MeasureModeAtMost, constraintList.constraints[0].widthMode);
 
   ASSERT_TRUE(isUndefined(constraintList.constraints[0].height));
@@ -313,7 +313,7 @@ TEST_CASE( overflow_scroll_row) {
   ASSERT_TRUE(isUndefined(constraintList.constraints[0].width));
   ASSERT_EQ(MeasureModeUndefined, constraintList.constraints[0].widthMode);
 
-  ASSERT_FLOAT_EQ(100, constraintList.constraints[0].height);
+  CHECK_EQ(100, constraintList.constraints[0].height);
   ASSERT_EQ(MeasureModeAtMost, constraintList.constraints[0].heightMode);
 
   free(constraintList.constraints);

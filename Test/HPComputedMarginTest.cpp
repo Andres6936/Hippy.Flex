@@ -29,13 +29,13 @@ TEST_CASE( computed_layout_margin) {
 
   HPNodeDoLayout(root, 100, 100);
 
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetMargin(root, CSSLeft));
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetMargin(root, CSSRight));
+  CHECK_EQ(10, HPNodeLayoutGetMargin(root, CSSLeft));
+  CHECK_EQ(0, HPNodeLayoutGetMargin(root, CSSRight));
 
   HPNodeDoLayout(root, 100, 100, DirectionRTL);
 
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetMargin(root, CSSLeft));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetMargin(root, CSSRight));
+  CHECK_EQ(0, HPNodeLayoutGetMargin(root, CSSLeft));
+  CHECK_EQ(10, HPNodeLayoutGetMargin(root, CSSRight));
 
   HPNodeFreeRecursive(root);
 }

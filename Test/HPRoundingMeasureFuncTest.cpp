@@ -50,36 +50,36 @@ TEST_CASE( rounding_feature_with_custom_measure_func_floor) {
 //
 //  HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionRTL);
 //
-//  ASSERT_FLOAT_EQ(10.2, HPNodeLayoutGetWidth(root_child0));
-//  ASSERT_FLOAT_EQ(10.2, HPNodeLayoutGetHeight(root_child0));
+//  CHECK_EQ(10.2, HPNodeLayoutGetWidth(root_child0));
+//  CHECK_EQ(10.2, HPNodeLayoutGetHeight(root_child0));
 
 //  YGConfigSetPointScaleFactor(config, 1.0f);
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_FLOAT_EQ(11, HPNodeLayoutGetWidth(root_child0));
-  ASSERT_FLOAT_EQ(11, HPNodeLayoutGetHeight(root_child0));
+  CHECK_EQ(11, HPNodeLayoutGetWidth(root_child0));
+  CHECK_EQ(11, HPNodeLayoutGetHeight(root_child0));
 
 //  YGConfigSetPointScaleFactor(config, 2.0f);
 //
 //  HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionRTL);
 //
-//  ASSERT_FLOAT_EQ(10.5, HPNodeLayoutGetWidth(root_child0));
-//  ASSERT_FLOAT_EQ(10.5, HPNodeLayoutGetHeight(root_child0));
+//  CHECK_EQ(10.5, HPNodeLayoutGetWidth(root_child0));
+//  CHECK_EQ(10.5, HPNodeLayoutGetHeight(root_child0));
 //
 //  YGConfigSetPointScaleFactor(config, 4.0f);
 //
 //  HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 //
-//  ASSERT_FLOAT_EQ(10.25, HPNodeLayoutGetWidth(root_child0));
-//  ASSERT_FLOAT_EQ(10.25, HPNodeLayoutGetHeight(root_child0));
+//  CHECK_EQ(10.25, HPNodeLayoutGetWidth(root_child0));
+//  CHECK_EQ(10.25, HPNodeLayoutGetHeight(root_child0));
 //
 //  YGConfigSetPointScaleFactor(config, 1.0f / 3.0f);
 //
 //  HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionRTL);
 //
-//  ASSERT_FLOAT_EQ(12.0, HPNodeLayoutGetWidth(root_child0));
-//  ASSERT_FLOAT_EQ(12.0, HPNodeLayoutGetHeight(root_child0));
+//  CHECK_EQ(12.0, HPNodeLayoutGetWidth(root_child0));
+//  CHECK_EQ(12.0, HPNodeLayoutGetHeight(root_child0));
 
   HPNodeFreeRecursive(root);
 
@@ -98,8 +98,8 @@ TEST_CASE( rounding_feature_with_custom_measure_func_ceil) {
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_FLOAT_EQ(11, HPNodeLayoutGetWidth(root_child0));
-  ASSERT_FLOAT_EQ(11, HPNodeLayoutGetHeight(root_child0));
+  CHECK_EQ(11, HPNodeLayoutGetWidth(root_child0));
+  CHECK_EQ(11, HPNodeLayoutGetHeight(root_child0));
 
   HPNodeFreeRecursive(root);
 
@@ -118,9 +118,9 @@ TEST_CASE( rounding_feature_with_custom_measure_and_fractial_matching_scale) {
 //
 //  HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 //
-//  ASSERT_FLOAT_EQ(0.5, HPNodeLayoutGetWidth(root_child0));
-//  ASSERT_FLOAT_EQ(0.5, HPNodeLayoutGetHeight(root_child0));
-//  ASSERT_FLOAT_EQ(73.5, HPNodeLayoutGetLeft(root_child0));
+//  CHECK_EQ(0.5, HPNodeLayoutGetWidth(root_child0));
+//  CHECK_EQ(0.5, HPNodeLayoutGetHeight(root_child0));
+//  CHECK_EQ(73.5, HPNodeLayoutGetLeft(root_child0));
 
   HPNodeFreeRecursive(root);
 

@@ -28,13 +28,13 @@ TEST_CASE( computed_layout_padding) {
 
   HPNodeDoLayout(root, 100, 100);
 
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetPadding(root, CSSLeft));
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetPadding(root, CSSRight));
+  CHECK_EQ(10, HPNodeLayoutGetPadding(root, CSSLeft));
+  CHECK_EQ(0, HPNodeLayoutGetPadding(root, CSSRight));
 
   HPNodeDoLayout(root, 100, 100, DirectionRTL);
 
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetPadding(root, CSSLeft));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetPadding(root, CSSRight));
+  CHECK_EQ(0, HPNodeLayoutGetPadding(root, CSSLeft));
+  CHECK_EQ(10, HPNodeLayoutGetPadding(root, CSSRight));
 
   HPNodeFreeRecursive(root);
 }

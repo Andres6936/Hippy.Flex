@@ -34,15 +34,15 @@ TEST_CASE( zero_out_layout) {
 
   HPNodeDoLayout(root, 100, 100);
 
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetMargin(child, CSSTop));
-  ASSERT_FLOAT_EQ(10, HPNodeLayoutGetPadding(child, CSSTop));
+  CHECK_EQ(10, HPNodeLayoutGetMargin(child, CSSTop));
+  CHECK_EQ(10, HPNodeLayoutGetPadding(child, CSSTop));
 
   HPNodeStyleSetDisplay(child, DisplayTypeNone);
 
   HPNodeDoLayout(root, 100, 100);
 
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetMargin(child, CSSTop));
-  ASSERT_FLOAT_EQ(0, HPNodeLayoutGetPadding(child, CSSTop));
+  CHECK_EQ(0, HPNodeLayoutGetMargin(child, CSSTop));
+  CHECK_EQ(0, HPNodeLayoutGetPadding(child, CSSTop));
 
   HPNodeFreeRecursive(root);
 }
