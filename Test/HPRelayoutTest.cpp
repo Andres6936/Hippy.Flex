@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-//TEST(HippyTest, dont_cache_computed_flex_basis_between_layouts) {
+//TEST_CASE( dont_cache_computed_flex_basis_between_layouts) {
 //
 //
 //  const HPNodeRef root = HPNodeNew();
@@ -40,7 +40,7 @@
 //
 //}
 
-TEST(HippyTest, recalculate_resolvedDimonsion_onchange) {
+TEST_CASE( recalculate_resolvedDimonsion_onchange) {
   const HPNodeRef root = HPNodeNew();
 
   const HPNodeRef root_child0 = HPNodeNew();

@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-TEST(HippyTest, align_items_stretch) {
+TEST_CASE( align_items_stretch) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -56,7 +56,7 @@ TEST(HippyTest, align_items_stretch) {
 
 }
 
-TEST(HippyTest, align_items_center) {
+TEST_CASE( align_items_center) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignCenter);
@@ -95,7 +95,7 @@ TEST(HippyTest, align_items_center) {
 
 }
 
-TEST(HippyTest, align_items_flex_start) {
+TEST_CASE( align_items_flex_start) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
@@ -134,7 +134,7 @@ TEST(HippyTest, align_items_flex_start) {
 
 }
 
-TEST(HippyTest, align_items_flex_end) {
+TEST_CASE( align_items_flex_end) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignEnd);
@@ -175,7 +175,7 @@ TEST(HippyTest, align_items_flex_end) {
 
 //TODO:: baseline not support ianwang 2018.01.13.
 /*
-TEST(HippyTest, align_baseline) {
+TEST_CASE( align_baseline) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -231,7 +231,7 @@ TEST(HippyTest, align_baseline) {
 }
 
 
-TEST(HippyTest, align_baseline_child) {
+TEST_CASE( align_baseline_child) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -302,7 +302,7 @@ TEST(HippyTest, align_baseline_child) {
 }
 
 
-TEST(HippyTest, align_baseline_child_multiline) {
+TEST_CASE( align_baseline_child_multiline) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -419,7 +419,7 @@ TEST(HippyTest, align_baseline_child_multiline) {
 
 }
 
-TEST(HippyTest, align_baseline_child_multiline_override) {
+TEST_CASE( align_baseline_child_multiline_override) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -538,7 +538,7 @@ TEST(HippyTest, align_baseline_child_multiline_override) {
 
 }
 
-TEST(HippyTest, align_baseline_child_multiline_no_override_on_secondline) {
+TEST_CASE( align_baseline_child_multiline_no_override_on_secondline) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -656,7 +656,7 @@ TEST(HippyTest, align_baseline_child_multiline_no_override_on_secondline) {
 
 }
 
-TEST(HippyTest, align_baseline_child_top) {
+TEST_CASE( align_baseline_child_top) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -727,7 +727,7 @@ TEST(HippyTest, align_baseline_child_top) {
 
 }
 
-TEST(HippyTest, align_baseline_child_top2) {
+TEST_CASE( align_baseline_child_top2) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -798,7 +798,7 @@ TEST(HippyTest, align_baseline_child_top2) {
 
 }
 
-TEST(HippyTest, align_baseline_double_nested_child) {
+TEST_CASE( align_baseline_double_nested_child) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -883,7 +883,7 @@ TEST(HippyTest, align_baseline_double_nested_child) {
 
 }
 
-TEST(HippyTest, align_baseline_column) {
+TEST_CASE( align_baseline_column) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignBaseline);
@@ -937,7 +937,7 @@ TEST(HippyTest, align_baseline_column) {
 
 }
 
-TEST(HippyTest, align_baseline_child_margin) {
+TEST_CASE( align_baseline_child_margin) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -1015,7 +1015,7 @@ TEST(HippyTest, align_baseline_child_margin) {
 
 }
 
-TEST(HippyTest, align_baseline_child_padding) {
+TEST_CASE( align_baseline_child_padding) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -1093,7 +1093,7 @@ TEST(HippyTest, align_baseline_child_padding) {
 
 }
 
-TEST(HippyTest, align_baseline_multiline) {
+TEST_CASE( align_baseline_multiline) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -1209,7 +1209,7 @@ TEST(HippyTest, align_baseline_multiline) {
 
 }
 
-TEST(HippyTest, align_baseline_multiline_column) {
+TEST_CASE( align_baseline_multiline_column) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignBaseline);
@@ -1324,7 +1324,7 @@ TEST(HippyTest, align_baseline_multiline_column) {
 
 }
 
-TEST(HippyTest, align_baseline_multiline_column2) {
+TEST_CASE( align_baseline_multiline_column2) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignBaseline);
@@ -1439,7 +1439,7 @@ TEST(HippyTest, align_baseline_multiline_column2) {
 
 }
 
-TEST(HippyTest, align_baseline_multiline_row_and_column) {
+TEST_CASE( align_baseline_multiline_row_and_column) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -1555,7 +1555,7 @@ TEST(HippyTest, align_baseline_multiline_row_and_column) {
 
 }*/
 
-TEST(HippyTest, align_items_center_child_with_margin_bigger_than_parent) {
+TEST_CASE( align_items_center_child_with_margin_bigger_than_parent) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -1611,7 +1611,7 @@ TEST(HippyTest, align_items_center_child_with_margin_bigger_than_parent) {
 
 }
 
-TEST(HippyTest, align_items_flex_end_child_with_margin_bigger_than_parent) {
+TEST_CASE( align_items_flex_end_child_with_margin_bigger_than_parent) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -1667,7 +1667,7 @@ TEST(HippyTest, align_items_flex_end_child_with_margin_bigger_than_parent) {
 
 }
 
-TEST(HippyTest, align_items_center_child_without_margin_bigger_than_parent) {
+TEST_CASE( align_items_center_child_without_margin_bigger_than_parent) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -1721,7 +1721,7 @@ TEST(HippyTest, align_items_center_child_without_margin_bigger_than_parent) {
 
 }
 
-TEST(HippyTest, align_items_flex_end_child_without_margin_bigger_than_parent) {
+TEST_CASE( align_items_flex_end_child_without_margin_bigger_than_parent) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -1775,7 +1775,7 @@ TEST(HippyTest, align_items_flex_end_child_without_margin_bigger_than_parent) {
 
 }
 
-TEST(HippyTest, align_center_should_size_based_on_content) {
+TEST_CASE( align_center_should_size_based_on_content) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignCenter);
@@ -1845,7 +1845,7 @@ TEST(HippyTest, align_center_should_size_based_on_content) {
 
 }
 
-TEST(HippyTest, align_strech_should_size_based_on_parent) {
+TEST_CASE( align_strech_should_size_based_on_parent) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetMargin(root, CSSTop, 20);
@@ -1914,7 +1914,7 @@ TEST(HippyTest, align_strech_should_size_based_on_parent) {
 
 }
 
-TEST(HippyTest, align_flex_start_with_shrinking_children) {
+TEST_CASE( align_flex_start_with_shrinking_children) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 500);
@@ -1981,7 +1981,7 @@ TEST(HippyTest, align_flex_start_with_shrinking_children) {
 
 }
 
-TEST(HippyTest, align_flex_start_with_stretching_children) {
+TEST_CASE( align_flex_start_with_stretching_children) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 500);
@@ -2047,7 +2047,7 @@ TEST(HippyTest, align_flex_start_with_stretching_children) {
 
 }
 
-TEST(HippyTest, align_flex_start_with_shrinking_children_with_stretch) {
+TEST_CASE( align_flex_start_with_shrinking_children_with_stretch) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 500);

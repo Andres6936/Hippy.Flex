@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-TEST(HippyTest, dirty_propagation) {
+TEST_CASE( dirty_propagation) {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
   HPNodeStyleSetWidth(root, 100);
@@ -52,7 +52,7 @@ TEST(HippyTest, dirty_propagation) {
   HPNodeFreeRecursive(root);
 }
 
-TEST(HippyTest, dirty_propagation_only_if_prop_changed) {
+TEST_CASE( dirty_propagation_only_if_prop_changed) {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
   HPNodeStyleSetWidth(root, 100);
@@ -79,7 +79,7 @@ TEST(HippyTest, dirty_propagation_only_if_prop_changed) {
   HPNodeFreeRecursive(root);
 }
 
-TEST(HippyTest, dirty_mark_all_children_as_dirty_when_display_changes) {
+TEST_CASE( dirty_mark_all_children_as_dirty_when_display_changes) {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
   HPNodeStyleSetHeight(root, 100);
@@ -127,7 +127,7 @@ TEST(HippyTest, dirty_mark_all_children_as_dirty_when_display_changes) {
   HPNodeFreeRecursive(root);
 }
 
-TEST(HippyTest, dirty_node_only_if_children_are_actually_removed) {
+TEST_CASE( dirty_node_only_if_children_are_actually_removed) {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
   HPNodeStyleSetWidth(root, 50);
@@ -152,7 +152,7 @@ TEST(HippyTest, dirty_node_only_if_children_are_actually_removed) {
   HPNodeFreeRecursive(root);
 }
 
-TEST(HippyTest, dirty_node_only_if_undefined_values_gets_set_to_undefined) {
+TEST_CASE( dirty_node_only_if_undefined_values_gets_set_to_undefined) {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 50);
   HPNodeStyleSetHeight(root, 50);

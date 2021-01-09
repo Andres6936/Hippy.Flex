@@ -37,7 +37,7 @@ static HPSize _measureFractial(HPNodeRef node, float width,
   return HPSize { width = 0.5f, height = 0.5f, };
 }
 
-TEST(HippyTest, rounding_feature_with_custom_measure_func_floor) {
+TEST_CASE( rounding_feature_with_custom_measure_func_floor) {
 
   const HPNodeRef root = HPNodeNew();
 
@@ -85,7 +85,7 @@ TEST(HippyTest, rounding_feature_with_custom_measure_func_floor) {
 
 }
 
-TEST(HippyTest, rounding_feature_with_custom_measure_func_ceil) {
+TEST_CASE( rounding_feature_with_custom_measure_func_ceil) {
 
   const HPNodeRef root = HPNodeNew();
 
@@ -105,7 +105,7 @@ TEST(HippyTest, rounding_feature_with_custom_measure_func_ceil) {
 
 }
 
-TEST(HippyTest, rounding_feature_with_custom_measure_and_fractial_matching_scale) {
+TEST_CASE( rounding_feature_with_custom_measure_and_fractial_matching_scale) {
 
   const HPNodeRef root = HPNodeNew();
 

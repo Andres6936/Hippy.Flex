@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-TEST(HippyTest, reset_layout_when_child_removed) {
+TEST_CASE( reset_layout_when_child_removed) {
   const HPNodeRef root = HPNodeNew();
 
   const HPNodeRef root_child0 = HPNodeNew();

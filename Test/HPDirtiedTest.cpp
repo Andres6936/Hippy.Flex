@@ -24,7 +24,7 @@ static void _dirtied(HPNodeRef node) {
   (*dirtiedCount)++;
 }
 
-TEST(HippyTest, dirtied) {
+TEST_CASE( dirtied) {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
   HPNodeStyleSetWidth(root, 100);
@@ -47,7 +47,7 @@ TEST(HippyTest, dirtied) {
   ASSERT_EQ(1, dirtiedCount);
 }
 
-TEST(HippyTest, dirtied_propagation) {
+TEST_CASE( dirtied_propagation) {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
   HPNodeStyleSetWidth(root, 100);
@@ -80,7 +80,7 @@ TEST(HippyTest, dirtied_propagation) {
   ASSERT_EQ(1, dirtiedCount);
 }
 
-TEST(HippyTest, dirtied_hierarchy) {
+TEST_CASE( dirtied_hierarchy) {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
   HPNodeStyleSetWidth(root, 100);

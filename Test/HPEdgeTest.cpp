@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-TEST(HippyTest, start_overrides) {
+TEST_CASE( start_overrides) {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
   HPNodeStyleSetWidth(root, 100);
@@ -42,7 +42,7 @@ TEST(HippyTest, start_overrides) {
   HPNodeFreeRecursive(root);
 }
 
-TEST(HippyTest, end_overrides) {
+TEST_CASE( end_overrides) {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
   HPNodeStyleSetWidth(root, 100);
@@ -65,7 +65,7 @@ TEST(HippyTest, end_overrides) {
   HPNodeFreeRecursive(root);
 }
 
-TEST(HippyTest, horizontal_overridden) {
+TEST_CASE( horizontal_overridden) {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
   HPNodeStyleSetWidth(root, 100);
@@ -84,7 +84,7 @@ TEST(HippyTest, horizontal_overridden) {
   HPNodeFreeRecursive(root);
 }
 
-TEST(HippyTest, vertical_overridden) {
+TEST_CASE( vertical_overridden) {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionColumn);
   HPNodeStyleSetWidth(root, 100);
@@ -103,7 +103,7 @@ TEST(HippyTest, vertical_overridden) {
   HPNodeFreeRecursive(root);
 }
 
-TEST(HippyTest, horizontal_overrides_all) {
+TEST_CASE( horizontal_overrides_all) {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionColumn);
   HPNodeStyleSetWidth(root, 100);
@@ -124,7 +124,7 @@ TEST(HippyTest, horizontal_overrides_all) {
   HPNodeFreeRecursive(root);
 }
 
-TEST(HippyTest, vertical_overrides_all) {
+TEST_CASE( vertical_overrides_all) {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionColumn);
   HPNodeStyleSetWidth(root, 100);
@@ -145,7 +145,7 @@ TEST(HippyTest, vertical_overrides_all) {
   HPNodeFreeRecursive(root);
 }
 
-TEST(HippyTest, all_overridden) {
+TEST_CASE( all_overridden) {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionColumn);
   HPNodeStyleSetWidth(root, 100);

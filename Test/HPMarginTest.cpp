@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-TEST(HippyTest, margin_start) {
+TEST_CASE( margin_start) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -58,7 +58,7 @@ TEST(HippyTest, margin_start) {
 
 }
 
-TEST(HippyTest, margin_top) {
+TEST_CASE( margin_top) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -96,7 +96,7 @@ TEST(HippyTest, margin_top) {
 
 }
 
-TEST(HippyTest, margin_end) {
+TEST_CASE( margin_end) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -136,7 +136,7 @@ TEST(HippyTest, margin_end) {
 
 }
 
-TEST(HippyTest, margin_bottom) {
+TEST_CASE( margin_bottom) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignEnd);
@@ -175,7 +175,7 @@ TEST(HippyTest, margin_bottom) {
 
 }
 
-TEST(HippyTest, margin_and_flex_row) {
+TEST_CASE( margin_and_flex_row) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -215,7 +215,7 @@ TEST(HippyTest, margin_and_flex_row) {
 
 }
 
-TEST(HippyTest, margin_and_flex_column) {
+TEST_CASE( margin_and_flex_column) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -254,7 +254,7 @@ TEST(HippyTest, margin_and_flex_column) {
 
 }
 
-TEST(HippyTest, margin_and_stretch_row) {
+TEST_CASE( margin_and_stretch_row) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -294,7 +294,7 @@ TEST(HippyTest, margin_and_stretch_row) {
 
 }
 
-TEST(HippyTest, margin_and_stretch_column) {
+TEST_CASE( margin_and_stretch_column) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -333,7 +333,7 @@ TEST(HippyTest, margin_and_stretch_column) {
 
 }
 
-TEST(HippyTest, margin_with_sibling_row) {
+TEST_CASE( margin_with_sibling_row) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -386,7 +386,7 @@ TEST(HippyTest, margin_with_sibling_row) {
 
 }
 
-TEST(HippyTest, margin_with_sibling_column) {
+TEST_CASE( margin_with_sibling_column) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -438,7 +438,7 @@ TEST(HippyTest, margin_with_sibling_column) {
 
 }
 
-TEST(HippyTest, margin_auto_bottom) {
+TEST_CASE( margin_auto_bottom) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignCenter);
@@ -493,7 +493,7 @@ TEST(HippyTest, margin_auto_bottom) {
 
 }
 
-TEST(HippyTest, margin_auto_top) {
+TEST_CASE( margin_auto_top) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignCenter);
@@ -548,7 +548,7 @@ TEST(HippyTest, margin_auto_top) {
 
 }
 
-TEST(HippyTest, margin_auto_bottom_and_top) {
+TEST_CASE( margin_auto_bottom_and_top) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignCenter);
@@ -604,7 +604,7 @@ TEST(HippyTest, margin_auto_bottom_and_top) {
 
 }
 
-TEST(HippyTest, margin_auto_bottom_and_top_justify_center) {
+TEST_CASE( margin_auto_bottom_and_top_justify_center) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -660,7 +660,7 @@ TEST(HippyTest, margin_auto_bottom_and_top_justify_center) {
 
 }
 
-TEST(HippyTest, margin_auto_mutiple_children_column) {
+TEST_CASE( margin_auto_mutiple_children_column) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignCenter);
@@ -731,7 +731,7 @@ TEST(HippyTest, margin_auto_mutiple_children_column) {
 
 }
 
-TEST(HippyTest, margin_auto_mutiple_children_row) {
+TEST_CASE( margin_auto_mutiple_children_row) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -803,7 +803,7 @@ TEST(HippyTest, margin_auto_mutiple_children_row) {
 
 }
 
-TEST(HippyTest, margin_auto_left_and_right_column) {
+TEST_CASE( margin_auto_left_and_right_column) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -860,7 +860,7 @@ TEST(HippyTest, margin_auto_left_and_right_column) {
 
 }
 
-TEST(HippyTest, margin_auto_left_and_right) {
+TEST_CASE( margin_auto_left_and_right) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 200);
@@ -915,7 +915,7 @@ TEST(HippyTest, margin_auto_left_and_right) {
 
 }
 
-TEST(HippyTest, margin_auto_start_and_end_column) {
+TEST_CASE( margin_auto_start_and_end_column) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -972,7 +972,7 @@ TEST(HippyTest, margin_auto_start_and_end_column) {
 
 }
 
-TEST(HippyTest, margin_auto_start_and_end) {
+TEST_CASE( margin_auto_start_and_end) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 200);
@@ -1027,7 +1027,7 @@ TEST(HippyTest, margin_auto_start_and_end) {
 
 }
 
-TEST(HippyTest, margin_auto_left_and_right_column_and_center) {
+TEST_CASE( margin_auto_left_and_right_column_and_center) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignCenter);
@@ -1083,7 +1083,7 @@ TEST(HippyTest, margin_auto_left_and_right_column_and_center) {
 
 }
 
-TEST(HippyTest, margin_auto_left) {
+TEST_CASE( margin_auto_left) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignCenter);
@@ -1138,7 +1138,7 @@ TEST(HippyTest, margin_auto_left) {
 
 }
 
-TEST(HippyTest, margin_auto_right) {
+TEST_CASE( margin_auto_right) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignCenter);
@@ -1193,7 +1193,7 @@ TEST(HippyTest, margin_auto_right) {
 
 }
 
-TEST(HippyTest, margin_auto_left_and_right_strech) {
+TEST_CASE( margin_auto_left_and_right_strech) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -1249,7 +1249,7 @@ TEST(HippyTest, margin_auto_left_and_right_strech) {
 
 }
 
-TEST(HippyTest, margin_auto_top_and_bottom_strech) {
+TEST_CASE( margin_auto_top_and_bottom_strech) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 200);
@@ -1304,7 +1304,7 @@ TEST(HippyTest, margin_auto_top_and_bottom_strech) {
 
 }
 
-TEST(HippyTest, margin_should_not_be_part_of_max_height) {
+TEST_CASE( margin_should_not_be_part_of_max_height) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 250);
@@ -1344,7 +1344,7 @@ TEST(HippyTest, margin_should_not_be_part_of_max_height) {
 
 }
 
-TEST(HippyTest, margin_should_not_be_part_of_max_width) {
+TEST_CASE( margin_should_not_be_part_of_max_width) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 250);
@@ -1384,7 +1384,7 @@ TEST(HippyTest, margin_should_not_be_part_of_max_width) {
 
 }
 
-TEST(HippyTest, margin_auto_left_right_child_bigger_than_parent) {
+TEST_CASE( margin_auto_left_right_child_bigger_than_parent) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -1425,7 +1425,7 @@ TEST(HippyTest, margin_auto_left_right_child_bigger_than_parent) {
 
 }
 
-TEST(HippyTest, margin_auto_left_child_bigger_than_parent) {
+TEST_CASE( margin_auto_left_child_bigger_than_parent) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -1465,7 +1465,7 @@ TEST(HippyTest, margin_auto_left_child_bigger_than_parent) {
 
 }
 
-TEST(HippyTest, margin_fix_left_auto_right_child_bigger_than_parent) {
+TEST_CASE( margin_fix_left_auto_right_child_bigger_than_parent) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -1506,7 +1506,7 @@ TEST(HippyTest, margin_fix_left_auto_right_child_bigger_than_parent) {
 
 }
 
-TEST(HippyTest, margin_auto_left_fix_right_child_bigger_than_parent) {
+TEST_CASE( margin_auto_left_fix_right_child_bigger_than_parent) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -1547,7 +1547,7 @@ TEST(HippyTest, margin_auto_left_fix_right_child_bigger_than_parent) {
 
 }
 
-TEST(HippyTest, margin_auto_top_stretching_child) {
+TEST_CASE( margin_auto_top_stretching_child) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignCenter);
@@ -1603,7 +1603,7 @@ TEST(HippyTest, margin_auto_top_stretching_child) {
 
 }
 
-TEST(HippyTest, margin_auto_left_stretching_child) {
+TEST_CASE( margin_auto_left_stretching_child) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignCenter);

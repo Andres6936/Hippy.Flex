@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-TEST(HippyTest, display_none) {
+TEST_CASE( display_none) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -85,7 +85,7 @@ TEST(HippyTest, display_none) {
 
 }
 
-TEST(HippyTest, display_none_fixed_size) {
+TEST_CASE( display_none_fixed_size) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -139,7 +139,7 @@ TEST(HippyTest, display_none_fixed_size) {
 
 }
 
-TEST(HippyTest, display_none_with_margin) {
+TEST_CASE( display_none_with_margin) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -197,7 +197,7 @@ TEST(HippyTest, display_none_with_margin) {
 
 }
 
-TEST(HippyTest, display_none_with_child) {
+TEST_CASE( display_none_with_child) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -289,7 +289,7 @@ TEST(HippyTest, display_none_with_child) {
 
 }
 
-TEST(HippyTest, display_none_with_position) {
+TEST_CASE( display_none_with_position) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);

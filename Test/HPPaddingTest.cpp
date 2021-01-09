@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-TEST(HippyTest, padding_no_size) {
+TEST_CASE( padding_no_size) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetPadding(root, CSSLeft, 10);
@@ -44,7 +44,7 @@ TEST(HippyTest, padding_no_size) {
 
 }
 
-TEST(HippyTest, padding_container_match_child) {
+TEST_CASE( padding_container_match_child) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetPadding(root, CSSLeft, 10);
@@ -84,7 +84,7 @@ TEST(HippyTest, padding_container_match_child) {
 
 }
 
-TEST(HippyTest, padding_flex_child) {
+TEST_CASE( padding_flex_child) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetPadding(root, CSSLeft, 10);
@@ -126,7 +126,7 @@ TEST(HippyTest, padding_flex_child) {
 
 }
 
-TEST(HippyTest, padding_stretch_child) {
+TEST_CASE( padding_stretch_child) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetPadding(root, CSSLeft, 10);
@@ -167,7 +167,7 @@ TEST(HippyTest, padding_stretch_child) {
 
 }
 
-TEST(HippyTest, padding_center_child) {
+TEST_CASE( padding_center_child) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -210,7 +210,7 @@ TEST(HippyTest, padding_center_child) {
 
 }
 
-TEST(HippyTest, child_with_padding_align_end) {
+TEST_CASE( child_with_padding_align_end) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignEnd);

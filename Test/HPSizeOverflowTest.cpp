@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-TEST(HippyTest, nested_overflowing_child) {
+TEST_CASE( nested_overflowing_child) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -70,7 +70,7 @@ TEST(HippyTest, nested_overflowing_child) {
 
 }
 
-TEST(HippyTest, nested_overflowing_child_in_constraint_parent) {
+TEST_CASE( nested_overflowing_child_in_constraint_parent) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -123,7 +123,7 @@ TEST(HippyTest, nested_overflowing_child_in_constraint_parent) {
 
 }
 
-TEST(HippyTest, parent_wrap_child_size_overflowing_parent) {
+TEST_CASE( parent_wrap_child_size_overflowing_parent) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);

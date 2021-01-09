@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-TEST(HippyTest, border_no_size) {
+TEST_CASE( border_no_size) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetBorder(root, CSSLeft, 10);
@@ -44,7 +44,7 @@ TEST(HippyTest, border_no_size) {
 
 }
 
-TEST(HippyTest, border_container_match_child) {
+TEST_CASE( border_container_match_child) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetBorder(root, CSSLeft, 10);
@@ -84,7 +84,7 @@ TEST(HippyTest, border_container_match_child) {
 
 }
 
-TEST(HippyTest, border_flex_child) {
+TEST_CASE( border_flex_child) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetBorder(root, CSSLeft, 10);
@@ -126,7 +126,7 @@ TEST(HippyTest, border_flex_child) {
 
 }
 
-TEST(HippyTest, border_stretch_child) {
+TEST_CASE( border_stretch_child) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetBorder(root, CSSLeft, 10);
@@ -167,7 +167,7 @@ TEST(HippyTest, border_stretch_child) {
 
 }
 
-TEST(HippyTest, border_center_child) {
+TEST_CASE( border_center_child) {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);

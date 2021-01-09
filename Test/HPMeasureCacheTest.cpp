@@ -53,7 +53,7 @@ static HPSize _measure_84_49(HPNodeRef node, float width, MeasureMode widthMode,
   return HPSize { .width = 84.f, .height = 49.f, };
 }
 
-TEST(HippyTest, measure_once_single_flexible_child) {
+TEST_CASE( measure_once_single_flexible_child) {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
@@ -74,7 +74,7 @@ TEST(HippyTest, measure_once_single_flexible_child) {
   HPNodeFreeRecursive(root);
 }
 
-TEST(HippyTest, remeasure_with_same_exact_width_larger_than_needed_height) {
+TEST_CASE( remeasure_with_same_exact_width_larger_than_needed_height) {
   const HPNodeRef root = HPNodeNew();
 
   const HPNodeRef root_child0 = HPNodeNew();
@@ -91,7 +91,7 @@ TEST(HippyTest, remeasure_with_same_exact_width_larger_than_needed_height) {
   HPNodeFreeRecursive(root);
 }
 
-TEST(HippyTest, remeasure_with_same_atmost_width_larger_than_needed_height) {
+TEST_CASE( remeasure_with_same_atmost_width_larger_than_needed_height) {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
 
@@ -109,7 +109,7 @@ TEST(HippyTest, remeasure_with_same_atmost_width_larger_than_needed_height) {
   HPNodeFreeRecursive(root);
 }
 
-TEST(HippyTest, remeasure_with_computed_width_larger_than_needed_height) {
+TEST_CASE( remeasure_with_computed_width_larger_than_needed_height) {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
 
@@ -128,7 +128,7 @@ TEST(HippyTest, remeasure_with_computed_width_larger_than_needed_height) {
   HPNodeFreeRecursive(root);
 }
 
-TEST(HippyTest, remeasure_with_atmost_computed_width_undefined_height) {
+TEST_CASE( remeasure_with_atmost_computed_width_undefined_height) {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
 
@@ -146,7 +146,7 @@ TEST(HippyTest, remeasure_with_atmost_computed_width_undefined_height) {
   HPNodeFreeRecursive(root);
 }
 
-TEST(HippyTest, remeasure_with_already_measured_value_smaller_but_still_float_equal) {
+TEST_CASE( remeasure_with_already_measured_value_smaller_but_still_float_equal) {
   int measureCount = 0;
 
   const HPNodeRef root = HPNodeNew();
