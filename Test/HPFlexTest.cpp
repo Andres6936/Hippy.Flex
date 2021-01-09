@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-TEST_CASE( flex_basis_flex_grow_column) {
+TEST_CASE( "flex_basis_flex_grow_column") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -71,7 +71,7 @@ TEST_CASE( flex_basis_flex_grow_column) {
 
 }
 
-TEST_CASE( flex_basis_flex_grow_row) {
+TEST_CASE( "flex_basis_flex_grow_row") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -124,7 +124,7 @@ TEST_CASE( flex_basis_flex_grow_row) {
 
 }
 
-TEST_CASE( flex_basis_flex_shrink_column) {
+TEST_CASE( "flex_basis_flex_shrink_column") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -176,7 +176,7 @@ TEST_CASE( flex_basis_flex_shrink_column) {
 
 }
 
-TEST_CASE( flex_basis_flex_shrink_row) {
+TEST_CASE( "flex_basis_flex_shrink_row") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -229,7 +229,7 @@ TEST_CASE( flex_basis_flex_shrink_row) {
 
 }
 
-TEST_CASE( flex_shrink_to_zero) {
+TEST_CASE( "flex_shrink_to_zero") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetHeight(root, 75);
@@ -297,7 +297,7 @@ TEST_CASE( flex_shrink_to_zero) {
 
 }
 
-TEST_CASE( flex_basis_overrides_main_size) {
+TEST_CASE( "flex_basis_overrides_main_size") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -366,7 +366,7 @@ TEST_CASE( flex_basis_overrides_main_size) {
 
 }
 
-TEST_CASE( flex_grow_shrink_at_most) {
+TEST_CASE( "flex_grow_shrink_at_most") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -417,7 +417,7 @@ TEST_CASE( flex_grow_shrink_at_most) {
 
 }
 
-TEST_CASE( flex_grow_less_than_factor_one) {
+TEST_CASE( "flex_grow_less_than_factor_one") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 200);

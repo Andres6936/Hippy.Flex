@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-TEST_CASE( flex_direction_column_no_height) {
+TEST_CASE( "flex_direction_column_no_height") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -83,7 +83,7 @@ TEST_CASE( flex_direction_column_no_height) {
 
 }
 
-TEST_CASE( flex_direction_row_no_width) {
+TEST_CASE( "flex_direction_row_no_width") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -148,7 +148,7 @@ TEST_CASE( flex_direction_row_no_width) {
 
 }
 
-TEST_CASE( flex_direction_column) {
+TEST_CASE( "flex_direction_column") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -213,7 +213,7 @@ TEST_CASE( flex_direction_column) {
 
 }
 
-TEST_CASE( flex_direction_row) {
+TEST_CASE( "flex_direction_row") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -279,7 +279,7 @@ TEST_CASE( flex_direction_row) {
 
 }
 
-TEST_CASE( flex_direction_column_reverse) {
+TEST_CASE( "flex_direction_column_reverse") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionColumnReverse);
@@ -345,7 +345,7 @@ TEST_CASE( flex_direction_column_reverse) {
 
 }
 
-TEST_CASE( flex_direction_row_reverse) {
+TEST_CASE( "flex_direction_row_reverse") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRowReverse);
