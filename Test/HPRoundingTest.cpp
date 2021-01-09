@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
-#include <gtest.h>
-#include <Hippy.h>
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+
+#include <doctest/doctest.h>
+#include <Hippy/Flex/Hippy.h>
 
 TEST(HippyTest, rounding_flex_basis_flex_grow_row_width_of_100) {
 

@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
-#include <gtest.h>
-#include <Hippy.h>
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+
+#include <doctest/doctest.h>
+#include <Hippy/Flex/Hippy.h>
 
 // This test isn't correct from the Flexbox standard standpoint,
 // because percentages are calculated with parent constraints.
