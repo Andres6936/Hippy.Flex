@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-TEST_CASE( align_items_stretch) {
+TEST_CASE( "align_items_stretch") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -56,7 +56,7 @@ TEST_CASE( align_items_stretch) {
 
 }
 
-TEST_CASE( align_items_center) {
+TEST_CASE( "align_items_center") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignCenter);
@@ -95,7 +95,7 @@ TEST_CASE( align_items_center) {
 
 }
 
-TEST_CASE( align_items_flex_start) {
+TEST_CASE( "align_items_flex_start") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
@@ -134,7 +134,7 @@ TEST_CASE( align_items_flex_start) {
 
 }
 
-TEST_CASE( align_items_flex_end) {
+TEST_CASE( "align_items_flex_end") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignEnd);
@@ -1555,7 +1555,7 @@ TEST_CASE( align_baseline_multiline_row_and_column) {
 
 }*/
 
-TEST_CASE( align_items_center_child_with_margin_bigger_than_parent) {
+TEST_CASE( "align_items_center_child_with_margin_bigger_than_parent") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -1611,7 +1611,7 @@ TEST_CASE( align_items_center_child_with_margin_bigger_than_parent) {
 
 }
 
-TEST_CASE( align_items_flex_end_child_with_margin_bigger_than_parent) {
+TEST_CASE( "align_items_flex_end_child_with_margin_bigger_than_parent") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -1667,7 +1667,7 @@ TEST_CASE( align_items_flex_end_child_with_margin_bigger_than_parent) {
 
 }
 
-TEST_CASE( align_items_center_child_without_margin_bigger_than_parent) {
+TEST_CASE( "align_items_center_child_without_margin_bigger_than_parent") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -1721,7 +1721,7 @@ TEST_CASE( align_items_center_child_without_margin_bigger_than_parent) {
 
 }
 
-TEST_CASE( align_items_flex_end_child_without_margin_bigger_than_parent) {
+TEST_CASE( "align_items_flex_end_child_without_margin_bigger_than_parent") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -1775,7 +1775,7 @@ TEST_CASE( align_items_flex_end_child_without_margin_bigger_than_parent) {
 
 }
 
-TEST_CASE( align_center_should_size_based_on_content) {
+TEST_CASE( "align_center_should_size_based_on_content") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignCenter);
@@ -1845,7 +1845,7 @@ TEST_CASE( align_center_should_size_based_on_content) {
 
 }
 
-TEST_CASE( align_strech_should_size_based_on_parent) {
+TEST_CASE( "align_strech_should_size_based_on_parent") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetMargin(root, CSSTop, 20);
@@ -1914,7 +1914,7 @@ TEST_CASE( align_strech_should_size_based_on_parent) {
 
 }
 
-TEST_CASE( align_flex_start_with_shrinking_children) {
+TEST_CASE( "align_flex_start_with_shrinking_children") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 500);
@@ -1981,7 +1981,7 @@ TEST_CASE( align_flex_start_with_shrinking_children) {
 
 }
 
-TEST_CASE( align_flex_start_with_stretching_children) {
+TEST_CASE( "align_flex_start_with_stretching_children") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 500);
@@ -2047,7 +2047,7 @@ TEST_CASE( align_flex_start_with_stretching_children) {
 
 }
 
-TEST_CASE( align_flex_start_with_shrinking_children_with_stretch) {
+TEST_CASE( "align_flex_start_with_shrinking_children_with_stretch") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 500);
