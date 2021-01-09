@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-TEST_CASE( align_self_center) {
+TEST_CASE( "align_self_center") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -58,7 +58,7 @@ TEST_CASE( align_self_center) {
 
 }
 
-TEST_CASE( align_self_flex_end) {
+TEST_CASE( "align_self_flex_end") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -97,7 +97,7 @@ TEST_CASE( align_self_flex_end) {
 
 }
 
-TEST_CASE( align_self_flex_start) {
+TEST_CASE( "align_self_flex_start") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -136,7 +136,7 @@ TEST_CASE( align_self_flex_start) {
 
 }
 
-TEST_CASE( align_self_flex_end_override_flex_start) {
+TEST_CASE( "align_self_flex_end_override_flex_start") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
