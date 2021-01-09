@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-TEST_CASE( wrap_column) {
+TEST_CASE( "wrap_column") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexWrap(root, FlexWrap);
@@ -102,7 +102,7 @@ TEST_CASE( wrap_column) {
 
 }
 
-TEST_CASE( wrap_row) {
+TEST_CASE( "wrap_row") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -186,7 +186,7 @@ TEST_CASE( wrap_row) {
 
 }
 
-TEST_CASE( wrap_row_align_items_flex_end) {
+TEST_CASE( "wrap_row_align_items_flex_end") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -271,7 +271,7 @@ TEST_CASE( wrap_row_align_items_flex_end) {
 
 }
 
-TEST_CASE( wrap_row_align_items_center) {
+TEST_CASE( "wrap_row_align_items_center") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -356,7 +356,7 @@ TEST_CASE( wrap_row_align_items_center) {
 
 }
 
-TEST_CASE( flex_wrap_children_with_min_main_overriding_flex_basis) {
+TEST_CASE( "flex_wrap_children_with_min_main_overriding_flex_basis") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -412,7 +412,7 @@ TEST_CASE( flex_wrap_children_with_min_main_overriding_flex_basis) {
 
 }
 
-TEST_CASE( flex_wrap_wrap_to_child_height) {
+TEST_CASE( "flex_wrap_wrap_to_child_height") {
 
   const HPNodeRef root = HPNodeNew();
 
@@ -493,7 +493,7 @@ TEST_CASE( flex_wrap_wrap_to_child_height) {
 
 }
 
-TEST_CASE( flex_wrap_align_stretch_fits_one_row) {
+TEST_CASE( "flex_wrap_align_stretch_fits_one_row") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -546,7 +546,7 @@ TEST_CASE( flex_wrap_align_stretch_fits_one_row) {
 
 }
 
-TEST_CASE( wrap_reverse_row_align_content_flex_start) {
+TEST_CASE( "wrap_reverse_row_align_content_flex_start") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -645,7 +645,7 @@ TEST_CASE( wrap_reverse_row_align_content_flex_start) {
 
 }
 
-TEST_CASE( wrap_reverse_row_align_content_center) {
+TEST_CASE( "wrap_reverse_row_align_content_center") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -745,7 +745,7 @@ TEST_CASE( wrap_reverse_row_align_content_center) {
 
 }
 
-TEST_CASE( wrap_reverse_row_single_line_different_size) {
+TEST_CASE( "wrap_reverse_row_single_line_different_size") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -844,7 +844,7 @@ TEST_CASE( wrap_reverse_row_single_line_different_size) {
 
 }
 
-TEST_CASE( wrap_reverse_row_align_content_stretch) {
+TEST_CASE( "wrap_reverse_row_align_content_stretch") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -944,7 +944,7 @@ TEST_CASE( wrap_reverse_row_align_content_stretch) {
 
 }
 
-TEST_CASE( wrap_reverse_row_align_content_space_around) {
+TEST_CASE( "wrap_reverse_row_align_content_space_around") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -1044,7 +1044,7 @@ TEST_CASE( wrap_reverse_row_align_content_space_around) {
 
 }
 
-TEST_CASE( wrap_reverse_column_fixed_size) {
+TEST_CASE( "wrap_reverse_column_fixed_size") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignCenter);
@@ -1144,7 +1144,7 @@ TEST_CASE( wrap_reverse_column_fixed_size) {
 
 }
 
-TEST_CASE( wrapped_row_within_align_items_center) {
+TEST_CASE( "wrapped_row_within_align_items_center") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignCenter);
@@ -1213,7 +1213,7 @@ TEST_CASE( wrapped_row_within_align_items_center) {
 
 }
 
-TEST_CASE( wrapped_row_within_align_items_flex_start) {
+TEST_CASE( "wrapped_row_within_align_items_flex_start") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
@@ -1282,7 +1282,7 @@ TEST_CASE( wrapped_row_within_align_items_flex_start) {
 
 }
 
-TEST_CASE( wrapped_row_within_align_items_flex_end) {
+TEST_CASE( "wrapped_row_within_align_items_flex_end") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignEnd);
@@ -1351,7 +1351,7 @@ TEST_CASE( wrapped_row_within_align_items_flex_end) {
 
 }
 
-TEST_CASE( wrapped_column_max_height) {
+TEST_CASE( "wrapped_column_max_height") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -1428,7 +1428,7 @@ TEST_CASE( wrapped_column_max_height) {
 
 }
 
-TEST_CASE( wrapped_column_max_height_flex) {
+TEST_CASE( "wrapped_column_max_height_flex") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -1511,7 +1511,7 @@ TEST_CASE( wrapped_column_max_height_flex) {
 
 }
 
-TEST_CASE( wrap_nodes_with_content_sizing_overflowing_margin) {
+TEST_CASE( "wrap_nodes_with_content_sizing_overflowing_margin") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 500);
@@ -1607,7 +1607,7 @@ TEST_CASE( wrap_nodes_with_content_sizing_overflowing_margin) {
 
 }
 
-TEST_CASE( wrap_nodes_with_content_sizing_margin_cross) {
+TEST_CASE( "wrap_nodes_with_content_sizing_margin_cross") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 500);
