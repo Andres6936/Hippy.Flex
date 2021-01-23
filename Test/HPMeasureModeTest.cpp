@@ -47,7 +47,7 @@ static HPSize _measure(HPNodeRef node, float width, MeasureMode widthMode,
       .height = heightMode == MeasureModeUndefined ? 10 : width, };
 }
 
-/*TEST_CASE( exactly_measure_stretched_child_column) {
+/*TEST_CASE( "exactly_measure_stretched_child_column") {
   struct _MeasureConstraintList constraintList = _MeasureConstraintList {
       .length = 0, .constraints = (struct _MeasureConstraint *) malloc(
           10 * sizeof(struct _MeasureConstraint)), };
@@ -65,10 +65,10 @@ static HPSize _measure(HPNodeRef node, float width, MeasureMode widthMode,
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_EQ(1, constraintList.length);
+  REQUIRE_EQ(1, constraintList.length);
 
   CHECK_EQ(100, constraintList.constraints[0].width);
-  ASSERT_EQ(MeasureModeExactly, constraintList.constraints[0].widthMode);
+  REQUIRE_EQ(MeasureModeExactly, constraintList.constraints[0].widthMode);
 
   free(constraintList.constraints);
   HPNodeFreeRecursive(root);
@@ -92,16 +92,16 @@ TEST_CASE( exactly_measure_stretched_child_row) {
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_EQ(1, constraintList.length);
+  REQUIRE_EQ(1, constraintList.length);
 
   CHECK_EQ(100, constraintList.constraints[0].height);
-  ASSERT_EQ(MeasureModeExactly, constraintList.constraints[0].heightMode);
+  REQUIRE_EQ(MeasureModeExactly, constraintList.constraints[0].heightMode);
 
   free(constraintList.constraints);
   HPNodeFreeRecursive(root);
 }*/
 
-TEST_CASE( at_most_main_axis_column) {
+TEST_CASE( "at_most_main_axis_column") {
   struct _MeasureConstraintList constraintList = _MeasureConstraintList {
       .length = 0, .constraints = (struct _MeasureConstraint *) malloc(
           10 * sizeof(struct _MeasureConstraint)), };
@@ -117,16 +117,16 @@ TEST_CASE( at_most_main_axis_column) {
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_EQ(1, constraintList.length);
+  REQUIRE_EQ(1, constraintList.length);
 
   CHECK_EQ(100, constraintList.constraints[0].height);
-  ASSERT_EQ(MeasureModeAtMost, constraintList.constraints[0].heightMode);
+  REQUIRE_EQ(MeasureModeAtMost, constraintList.constraints[0].heightMode);
 
   free(constraintList.constraints);
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( at_most_cross_axis_column) {
+TEST_CASE( "at_most_cross_axis_column") {
   struct _MeasureConstraintList constraintList = _MeasureConstraintList {
       .length = 0, .constraints = (struct _MeasureConstraint *) malloc(
           10 * sizeof(struct _MeasureConstraint)), };
@@ -143,16 +143,16 @@ TEST_CASE( at_most_cross_axis_column) {
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_EQ(1, constraintList.length);
+  REQUIRE_EQ(1, constraintList.length);
 
   CHECK_EQ(100, constraintList.constraints[0].width);
-  ASSERT_EQ(MeasureModeAtMost, constraintList.constraints[0].widthMode);
+  REQUIRE_EQ(MeasureModeAtMost, constraintList.constraints[0].widthMode);
 
   free(constraintList.constraints);
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( at_most_main_axis_row) {
+TEST_CASE( "at_most_main_axis_row") {
   struct _MeasureConstraintList constraintList = _MeasureConstraintList {
       .length = 0, .constraints = (struct _MeasureConstraint *) malloc(
           10 * sizeof(struct _MeasureConstraint)), };
@@ -169,16 +169,16 @@ TEST_CASE( at_most_main_axis_row) {
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_EQ(1, constraintList.length);
+  REQUIRE_EQ(1, constraintList.length);
 
   CHECK_EQ(100, constraintList.constraints[0].width);
-  ASSERT_EQ(MeasureModeAtMost, constraintList.constraints[0].widthMode);
+  REQUIRE_EQ(MeasureModeAtMost, constraintList.constraints[0].widthMode);
 
   free(constraintList.constraints);
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( at_most_cross_axis_row) {
+TEST_CASE( "at_most_cross_axis_row") {
   struct _MeasureConstraintList constraintList = _MeasureConstraintList {
       .length = 0, .constraints = (struct _MeasureConstraint *) malloc(
           10 * sizeof(struct _MeasureConstraint)), };
@@ -196,16 +196,16 @@ TEST_CASE( at_most_cross_axis_row) {
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_EQ(1, constraintList.length);
+  REQUIRE_EQ(1, constraintList.length);
 
   CHECK_EQ(100, constraintList.constraints[0].height);
-  ASSERT_EQ(MeasureModeAtMost, constraintList.constraints[0].heightMode);
+  REQUIRE_EQ(MeasureModeAtMost, constraintList.constraints[0].heightMode);
 
   free(constraintList.constraints);
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( flex_child) {
+TEST_CASE( "flex_child") {
   struct _MeasureConstraintList constraintList = _MeasureConstraintList {
       .length = 0, .constraints = (struct _MeasureConstraint *) malloc(
           10 * sizeof(struct _MeasureConstraint)), };
@@ -221,19 +221,19 @@ TEST_CASE( flex_child) {
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_EQ(2, constraintList.length);
+  REQUIRE_EQ(2, constraintList.length);
 
   CHECK_EQ(100, constraintList.constraints[0].height);
-  ASSERT_EQ(MeasureModeAtMost, constraintList.constraints[0].heightMode);
+  REQUIRE_EQ(MeasureModeAtMost, constraintList.constraints[0].heightMode);
 
   CHECK_EQ(100, constraintList.constraints[1].height);
-  ASSERT_EQ(MeasureModeExactly, constraintList.constraints[1].heightMode);
+  REQUIRE_EQ(MeasureModeExactly, constraintList.constraints[1].heightMode);
 
   free(constraintList.constraints);
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( flex_child_with_flex_basis) {
+TEST_CASE( "flex_child_with_flex_basis") {
   struct _MeasureConstraintList constraintList = _MeasureConstraintList {
       .length = 0, .constraints = (struct _MeasureConstraint *) malloc(
           10 * sizeof(struct _MeasureConstraint)), };
@@ -250,16 +250,16 @@ TEST_CASE( flex_child_with_flex_basis) {
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_EQ(1, constraintList.length);
+  REQUIRE_EQ(1, constraintList.length);
 
   CHECK_EQ(100, constraintList.constraints[0].height);
-  ASSERT_EQ(MeasureModeExactly, constraintList.constraints[0].heightMode);
+  REQUIRE_EQ(MeasureModeExactly, constraintList.constraints[0].heightMode);
 
   free(constraintList.constraints);
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( overflow_scroll_column) {
+TEST_CASE( "overflow_scroll_column") {
   struct _MeasureConstraintList constraintList = _MeasureConstraintList {
       .length = 0, .constraints = (struct _MeasureConstraint *) malloc(
           10 * sizeof(struct _MeasureConstraint)), };
@@ -277,19 +277,19 @@ TEST_CASE( overflow_scroll_column) {
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_EQ(1, constraintList.length);
+  REQUIRE_EQ(1, constraintList.length);
 
   CHECK_EQ(100, constraintList.constraints[0].width);
-  ASSERT_EQ(MeasureModeAtMost, constraintList.constraints[0].widthMode);
+  REQUIRE_EQ(MeasureModeAtMost, constraintList.constraints[0].widthMode);
 
-  ASSERT_TRUE(isUndefined(constraintList.constraints[0].height));
-  ASSERT_EQ(MeasureModeUndefined, constraintList.constraints[0].heightMode);
+  REQUIRE(isUndefined(constraintList.constraints[0].height));
+  REQUIRE_EQ(MeasureModeUndefined, constraintList.constraints[0].heightMode);
 
   free(constraintList.constraints);
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( overflow_scroll_row) {
+TEST_CASE( "overflow_scroll_row") {
   struct _MeasureConstraintList constraintList = _MeasureConstraintList {
       .length = 0, .constraints = (struct _MeasureConstraint *) malloc(
           10 * sizeof(struct _MeasureConstraint)), };
@@ -308,13 +308,13 @@ TEST_CASE( overflow_scroll_row) {
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_EQ(1, constraintList.length);
+  REQUIRE_EQ(1, constraintList.length);
 
-  ASSERT_TRUE(isUndefined(constraintList.constraints[0].width));
-  ASSERT_EQ(MeasureModeUndefined, constraintList.constraints[0].widthMode);
+  REQUIRE(isUndefined(constraintList.constraints[0].width));
+  REQUIRE_EQ(MeasureModeUndefined, constraintList.constraints[0].widthMode);
 
   CHECK_EQ(100, constraintList.constraints[0].height);
-  ASSERT_EQ(MeasureModeAtMost, constraintList.constraints[0].heightMode);
+  REQUIRE_EQ(MeasureModeAtMost, constraintList.constraints[0].heightMode);
 
   free(constraintList.constraints);
   HPNodeFreeRecursive(root);

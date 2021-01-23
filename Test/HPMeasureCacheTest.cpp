@@ -53,7 +53,7 @@ static HPSize _measure_84_49(HPNodeRef node, float width, MeasureMode widthMode,
   return HPSize { .width = 84.f, .height = 49.f, };
 }
 
-TEST_CASE( measure_once_single_flexible_child) {
+TEST_CASE( "measure_once_single_flexible_child") {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
@@ -69,12 +69,12 @@ TEST_CASE( measure_once_single_flexible_child) {
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_EQ(1, measureCount);
+  REQUIRE_EQ(1, measureCount);
 
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( remeasure_with_same_exact_width_larger_than_needed_height) {
+TEST_CASE( "remeasure_with_same_exact_width_larger_than_needed_height") {
   const HPNodeRef root = HPNodeNew();
 
   const HPNodeRef root_child0 = HPNodeNew();
@@ -86,12 +86,12 @@ TEST_CASE( remeasure_with_same_exact_width_larger_than_needed_height) {
   HPNodeDoLayout(root, 100, 100);
   HPNodeDoLayout(root, 100, 50);
 
-  ASSERT_EQ(1, measureCount);
+  REQUIRE_EQ(1, measureCount);
 
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( remeasure_with_same_atmost_width_larger_than_needed_height) {
+TEST_CASE( "remeasure_with_same_atmost_width_larger_than_needed_height") {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
 
@@ -104,12 +104,12 @@ TEST_CASE( remeasure_with_same_atmost_width_larger_than_needed_height) {
   HPNodeDoLayout(root, 100, 100);
   HPNodeDoLayout(root, 100, 50);
 
-  ASSERT_EQ(1, measureCount);
+  REQUIRE_EQ(1, measureCount);
 
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( remeasure_with_computed_width_larger_than_needed_height) {
+TEST_CASE( "remeasure_with_computed_width_larger_than_needed_height") {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
 
@@ -123,12 +123,12 @@ TEST_CASE( remeasure_with_computed_width_larger_than_needed_height) {
   HPNodeStyleSetAlignItems(root, FlexAlignStretch);
   HPNodeDoLayout(root, 10, 50);
 
-  ASSERT_EQ(1, measureCount);
+  REQUIRE_EQ(1, measureCount);
 
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( remeasure_with_atmost_computed_width_undefined_height) {
+TEST_CASE( "remeasure_with_atmost_computed_width_undefined_height") {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
 
@@ -141,12 +141,12 @@ TEST_CASE( remeasure_with_atmost_computed_width_undefined_height) {
   HPNodeDoLayout(root, 100, VALUE_UNDEFINED);
   HPNodeDoLayout(root, 10, VALUE_UNDEFINED);
 
-  ASSERT_EQ(1, measureCount);
+  REQUIRE_EQ(1, measureCount);
 
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( remeasure_with_already_measured_value_smaller_but_still_float_equal) {
+TEST_CASE( "remeasure_with_already_measured_value_smaller_but_still_float_equal") {
   int measureCount = 0;
 
   const HPNodeRef root = HPNodeNew();
@@ -171,5 +171,5 @@ TEST_CASE( remeasure_with_already_measured_value_smaller_but_still_float_equal) 
 
   HPNodeFreeRecursive(root);
 
-  ASSERT_EQ(1, measureCount);
+  REQUIRE_EQ(1, measureCount);
 }
