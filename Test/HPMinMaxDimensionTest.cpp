@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-TEST_CASE( max_width) {
+TEST_CASE( "max_width") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -57,7 +57,7 @@ TEST_CASE( max_width) {
 
 }
 
-TEST_CASE( max_height) {
+TEST_CASE( "max_height") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -96,7 +96,7 @@ TEST_CASE( max_height) {
 
 }
 
-TEST_CASE( min_height) {
+TEST_CASE( "min_height") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -148,7 +148,7 @@ TEST_CASE( min_height) {
 
 }
 
-TEST_CASE( min_width) {
+TEST_CASE( "min_width") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -201,7 +201,7 @@ TEST_CASE( min_width) {
 
 }
 
-TEST_CASE( justify_content_min_max) {
+TEST_CASE( "justify_content_min_max") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -241,7 +241,7 @@ TEST_CASE( justify_content_min_max) {
 
 }
 
-TEST_CASE( align_items_min_max) {
+TEST_CASE( "align_items_min_max") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignCenter);
@@ -281,7 +281,7 @@ TEST_CASE( align_items_min_max) {
 
 }
 
-TEST_CASE( justify_content_overflow_min_max) {
+TEST_CASE( "justify_content_overflow_min_max") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -350,7 +350,7 @@ TEST_CASE( justify_content_overflow_min_max) {
 
 }
 
-TEST_CASE( flex_grow_to_min) {
+TEST_CASE( "flex_grow_to_min") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -403,7 +403,7 @@ TEST_CASE( flex_grow_to_min) {
 
 }
 
-TEST_CASE( flex_grow_in_at_most_container) {
+TEST_CASE( "flex_grow_in_at_most_container") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -457,7 +457,7 @@ TEST_CASE( flex_grow_in_at_most_container) {
 
 }
 
-TEST_CASE( flex_grow_child) {
+TEST_CASE( "flex_grow_child") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -495,7 +495,7 @@ TEST_CASE( flex_grow_child) {
 
 }
 
-TEST_CASE( flex_grow_within_constrained_min_max_column) {
+TEST_CASE( "flex_grow_within_constrained_min_max_column") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetMinHeight(root, 100);
@@ -546,7 +546,7 @@ TEST_CASE( flex_grow_within_constrained_min_max_column) {
 
 }
 
-TEST_CASE( flex_grow_within_max_width) {
+TEST_CASE( "flex_grow_within_max_width") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 200);
@@ -599,7 +599,7 @@ TEST_CASE( flex_grow_within_max_width) {
 
 }
 
-TEST_CASE( flex_grow_within_constrained_max_width) {
+TEST_CASE( "flex_grow_within_constrained_max_width") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 200);
@@ -652,7 +652,7 @@ TEST_CASE( flex_grow_within_constrained_max_width) {
 
 }
 
-TEST_CASE( flex_root_ignored) {
+TEST_CASE( "flex_root_ignored") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexGrow(root, 1);
@@ -706,7 +706,7 @@ TEST_CASE( flex_root_ignored) {
 
 }
 
-TEST_CASE( flex_grow_root_minimized) {
+TEST_CASE( "flex_grow_root_minimized") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -775,7 +775,7 @@ TEST_CASE( flex_grow_root_minimized) {
 
 }
 
-TEST_CASE( flex_grow_height_maximized) {
+TEST_CASE( "flex_grow_height_maximized") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -843,7 +843,7 @@ TEST_CASE( flex_grow_height_maximized) {
 
 }
 
-TEST_CASE( flex_grow_within_constrained_min_row) {
+TEST_CASE( "flex_grow_within_constrained_min_row") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -895,7 +895,7 @@ TEST_CASE( flex_grow_within_constrained_min_row) {
 
 }
 
-TEST_CASE( flex_grow_within_constrained_min_column) {
+TEST_CASE( "flex_grow_within_constrained_min_column") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetMinHeight(root, 100);
@@ -945,7 +945,7 @@ TEST_CASE( flex_grow_within_constrained_min_column) {
 
 }
 
-TEST_CASE( flex_grow_within_constrained_max_row) {
+TEST_CASE( "flex_grow_within_constrained_max_row") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 200);
@@ -1012,7 +1012,7 @@ TEST_CASE( flex_grow_within_constrained_max_row) {
 
 }
 
-TEST_CASE( flex_grow_within_constrained_max_column) {
+TEST_CASE( "flex_grow_within_constrained_max_column") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -1064,7 +1064,7 @@ TEST_CASE( flex_grow_within_constrained_max_column) {
 
 }
 
-TEST_CASE( child_min_max_width_flexing) {
+TEST_CASE( "child_min_max_width_flexing") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -1120,7 +1120,7 @@ TEST_CASE( child_min_max_width_flexing) {
 
 }
 
-TEST_CASE( min_width_overrides_width) {
+TEST_CASE( "min_width_overrides_width") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 50);
@@ -1143,7 +1143,7 @@ TEST_CASE( min_width_overrides_width) {
 
 }
 
-TEST_CASE( max_width_overrides_width) {
+TEST_CASE( "max_width_overrides_width") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 200);
@@ -1166,7 +1166,7 @@ TEST_CASE( max_width_overrides_width) {
 
 }
 
-TEST_CASE( min_height_overrides_height) {
+TEST_CASE( "min_height_overrides_height") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetHeight(root, 50);
@@ -1189,7 +1189,7 @@ TEST_CASE( min_height_overrides_height) {
 
 }
 
-TEST_CASE( max_height_overrides_height) {
+TEST_CASE( "max_height_overrides_height") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetHeight(root, 200);
@@ -1212,7 +1212,7 @@ TEST_CASE( max_height_overrides_height) {
 
 }
 
-TEST_CASE( min_max_percent_no_width_height) {
+TEST_CASE( "min_max_percent_no_width_height") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);

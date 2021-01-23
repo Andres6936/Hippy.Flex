@@ -45,13 +45,13 @@ static HPSize _measure_assert_negative(HPNodeRef node, float width,
                                        MeasureMode widthMode, float height,
                                        MeasureMode heightMode,
                                        void * layoutContext) {
-  EXPECT_GE(width, 0);
-  EXPECT_GE(height, 0);
+  CHECK_GE(width, 0);
+  CHECK_GE(height, 0);
 
   return HPSize { .width = 0, .height = 0, };
 }
 
-TEST_CASE( dont_measure_single_grow_shrink_child) {
+TEST_CASE( "dont_measure_single_grow_shrink_child") {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
   HPNodeStyleSetHeight(root, 100);
@@ -68,12 +68,12 @@ TEST_CASE( dont_measure_single_grow_shrink_child) {
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_EQ(0, measureCount);
+  REQUIRE_EQ(0, measureCount);
 
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( measure_absolute_child_with_no_constraints) {
+TEST_CASE( "measure_absolute_child_with_no_constraints") {
   const HPNodeRef root = HPNodeNew();
 
   const HPNodeRef root_child0 = HPNodeNew();
@@ -89,12 +89,12 @@ TEST_CASE( measure_absolute_child_with_no_constraints) {
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_EQ(1, measureCount);
+  REQUIRE_EQ(1, measureCount);
 
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( dont_measure_when_min_equals_max) {
+TEST_CASE( "dont_measure_when_min_equals_max") {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
   HPNodeStyleSetWidth(root, 100);
@@ -114,7 +114,7 @@ TEST_CASE( dont_measure_when_min_equals_max) {
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_EQ(0, measureCount);
+  REQUIRE_EQ(0, measureCount);
   CHECK_EQ(0, HPNodeLayoutGetLeft(root_child0));
   CHECK_EQ(0, HPNodeLayoutGetTop(root_child0));
   CHECK_EQ(10, HPNodeLayoutGetWidth(root_child0));
@@ -123,7 +123,7 @@ TEST_CASE( dont_measure_when_min_equals_max) {
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( dont_measure_when_min_equals_max_percentages) {
+TEST_CASE( "dont_measure_when_min_equals_max_percentages") {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
   HPNodeStyleSetWidth(root, 100);
@@ -143,7 +143,7 @@ TEST_CASE( dont_measure_when_min_equals_max_percentages) {
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_EQ(0, measureCount);
+  REQUIRE_EQ(0, measureCount);
   CHECK_EQ(0, HPNodeLayoutGetLeft(root_child0));
   CHECK_EQ(0, HPNodeLayoutGetTop(root_child0));
   CHECK_EQ(10, HPNodeLayoutGetWidth(root_child0));
@@ -152,7 +152,7 @@ TEST_CASE( dont_measure_when_min_equals_max_percentages) {
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( measure_nodes_with_margin_auto_and_stretch) {
+TEST_CASE( "measure_nodes_with_margin_auto_and_stretch") {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 500);
   HPNodeStyleSetHeight(root, 500);
@@ -165,15 +165,15 @@ TEST_CASE( measure_nodes_with_margin_auto_and_stretch) {
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  EXPECT_EQ(490, HPNodeLayoutGetLeft(root_child0));
-  EXPECT_EQ(0, HPNodeLayoutGetTop(root_child0));
-  EXPECT_EQ(10, HPNodeLayoutGetWidth(root_child0));
-  EXPECT_EQ(10, HPNodeLayoutGetHeight(root_child0));
+  CHECK_EQ(490, HPNodeLayoutGetLeft(root_child0));
+  CHECK_EQ(0, HPNodeLayoutGetTop(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetWidth(root_child0));
+  CHECK_EQ(10, HPNodeLayoutGetHeight(root_child0));
 
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( dont_measure_when_min_equals_max_mixed_width_percent) {
+TEST_CASE( "dont_measure_when_min_equals_max_mixed_width_percent") {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
   HPNodeStyleSetWidth(root, 100);
@@ -193,7 +193,7 @@ TEST_CASE( dont_measure_when_min_equals_max_mixed_width_percent) {
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_EQ(0, measureCount);
+  REQUIRE_EQ(0, measureCount);
   CHECK_EQ(0, HPNodeLayoutGetLeft(root_child0));
   CHECK_EQ(0, HPNodeLayoutGetTop(root_child0));
   CHECK_EQ(10, HPNodeLayoutGetWidth(root_child0));
@@ -202,7 +202,7 @@ TEST_CASE( dont_measure_when_min_equals_max_mixed_width_percent) {
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( dont_measure_when_min_equals_max_mixed_height_percent) {
+TEST_CASE( "dont_measure_when_min_equals_max_mixed_height_percent") {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetAlignItems(root, FlexAlignStart);
   HPNodeStyleSetWidth(root, 100);
@@ -222,7 +222,7 @@ TEST_CASE( dont_measure_when_min_equals_max_mixed_height_percent) {
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_EQ(0, measureCount);
+  REQUIRE_EQ(0, measureCount);
   CHECK_EQ(0, HPNodeLayoutGetLeft(root_child0));
   CHECK_EQ(0, HPNodeLayoutGetTop(root_child0));
   CHECK_EQ(10, HPNodeLayoutGetWidth(root_child0));
@@ -231,7 +231,7 @@ TEST_CASE( dont_measure_when_min_equals_max_mixed_height_percent) {
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( measure_enough_size_should_be_in_single_line) {
+TEST_CASE( "measure_enough_size_should_be_in_single_line") {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
 
@@ -250,7 +250,7 @@ TEST_CASE( measure_enough_size_should_be_in_single_line) {
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( measure_not_enough_size_should_wrap) {
+TEST_CASE( "measure_not_enough_size_should_wrap") {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 55);
 
@@ -268,7 +268,7 @@ TEST_CASE( measure_not_enough_size_should_wrap) {
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( measure_zero_space_should_grow) {
+TEST_CASE( "measure_zero_space_should_grow") {
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetHeight(root, 200);
   HPNodeStyleSetFlexDirection(root, FLexDirectionColumn);
@@ -299,7 +299,7 @@ TEST_CASE( measure_zero_space_should_grow) {
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( measure_flex_direction_row_and_padding) {
+TEST_CASE( "measure_flex_direction_row_and_padding") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -341,7 +341,7 @@ TEST_CASE( measure_flex_direction_row_and_padding) {
 
 }
 
-TEST_CASE( measure_flex_direction_column_and_padding) {
+TEST_CASE( "measure_flex_direction_column_and_padding") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetMargin(root, CSSTop, 20);
@@ -383,7 +383,7 @@ TEST_CASE( measure_flex_direction_column_and_padding) {
 
 }
 
-TEST_CASE( measure_flex_direction_row_no_padding) {
+TEST_CASE( "measure_flex_direction_row_no_padding") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -421,7 +421,7 @@ TEST_CASE( measure_flex_direction_row_no_padding) {
 
 }
 
-TEST_CASE( measure_flex_direction_row_no_padding_align_items_flexstart) {
+TEST_CASE( "measure_flex_direction_row_no_padding_align_items_flexstart") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -460,7 +460,7 @@ TEST_CASE( measure_flex_direction_row_no_padding_align_items_flexstart) {
 
 }
 
-TEST_CASE( measure_with_fixed_size) {
+TEST_CASE( "measure_with_fixed_size") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetMargin(root, CSSTop, 20);
@@ -504,7 +504,7 @@ TEST_CASE( measure_with_fixed_size) {
 
 }
 
-TEST_CASE( measure_with_flex_shrink) {
+TEST_CASE( "measure_with_flex_shrink") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetMargin(root, CSSTop, 20);
@@ -547,7 +547,7 @@ TEST_CASE( measure_with_flex_shrink) {
 
 }
 
-TEST_CASE( measure_no_padding) {
+TEST_CASE( "measure_no_padding") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetMargin(root, CSSTop, 20);
@@ -607,16 +607,17 @@ TEST_CASE( cannot_add_nonnull_measure_func_to_non_leaf_node) {
 
 #endif
 
-TEST_CASE( can_nullify_measure_func_on_any_node) {
+TEST_CASE( "can_nullify_measure_func_on_any_node") {
   const HPNodeRef root = HPNodeNew();
   HPNodeInsertChild(root, HPNodeNew(), 0);
 //  root->setMeasureFunc(nullptr);
   HPNodeSetMeasureFunc(root, nullptr);
-  ASSERT_TRUE(root->measure == NULL);
+  const bool isPointerNull = root->measure == NULL;
+  REQUIRE(isPointerNull);
   HPNodeFreeRecursive(root);
 }
 
-TEST_CASE( cant_call_negative_measure) {
+TEST_CASE( "cant_call_negative_measure") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionColumn);
@@ -635,7 +636,7 @@ TEST_CASE( cant_call_negative_measure) {
 
 }
 
-TEST_CASE( cant_call_negative_measure_horizontal) {
+TEST_CASE( "cant_call_negative_measure_horizontal") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -661,7 +662,7 @@ static HPSize _measure_90_10(HPNodeRef node, float width, MeasureMode widthMode,
   return HPSize { .width = 90, .height = 10, };
 }
 
-TEST_CASE( percent_with_text_node) {
+TEST_CASE( "percent_with_text_node") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
