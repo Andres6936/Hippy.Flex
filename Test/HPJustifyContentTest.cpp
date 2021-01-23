@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-TEST_CASE( justify_content_row_flex_start) {
+TEST_CASE( "justify_content_row_flex_start") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -85,7 +85,7 @@ TEST_CASE( justify_content_row_flex_start) {
 
 }
 
-TEST_CASE( justify_content_row_flex_end) {
+TEST_CASE( "justify_content_row_flex_end") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -152,7 +152,7 @@ TEST_CASE( justify_content_row_flex_end) {
 
 }
 
-TEST_CASE( justify_content_row_center) {
+TEST_CASE( "justify_content_row_center") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -219,7 +219,7 @@ TEST_CASE( justify_content_row_center) {
 
 }
 
-TEST_CASE( justify_content_row_space_between) {
+TEST_CASE( "justify_content_row_space_between") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -286,7 +286,7 @@ TEST_CASE( justify_content_row_space_between) {
 
 }
 
-TEST_CASE( justify_content_row_space_around) {
+TEST_CASE( "justify_content_row_space_around") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -353,7 +353,7 @@ TEST_CASE( justify_content_row_space_around) {
 
 }
 
-TEST_CASE( justify_content_column_flex_start) {
+TEST_CASE( "justify_content_column_flex_start") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 102);
@@ -418,7 +418,7 @@ TEST_CASE( justify_content_column_flex_start) {
 
 }
 
-TEST_CASE( justify_content_column_flex_end) {
+TEST_CASE( "justify_content_column_flex_end") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignEnd);
@@ -484,7 +484,7 @@ TEST_CASE( justify_content_column_flex_end) {
 
 }
 
-TEST_CASE( justify_content_column_center) {
+TEST_CASE( "justify_content_column_center") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -550,7 +550,7 @@ TEST_CASE( justify_content_column_center) {
 
 }
 
-TEST_CASE( justify_content_column_space_between) {
+TEST_CASE( "justify_content_column_space_between") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignSpaceBetween);
@@ -616,7 +616,7 @@ TEST_CASE( justify_content_column_space_between) {
 
 }
 
-TEST_CASE( justify_content_column_space_around) {
+TEST_CASE( "justify_content_column_space_around") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignSpaceAround);
@@ -682,7 +682,7 @@ TEST_CASE( justify_content_column_space_around) {
 
 }
 
-TEST_CASE( justify_content_row_min_width_and_margin) {
+TEST_CASE( "justify_content_row_min_width_and_margin") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -722,7 +722,7 @@ TEST_CASE( justify_content_row_min_width_and_margin) {
 
 }
 
-TEST_CASE( justify_content_row_max_width_and_margin) {
+TEST_CASE( "justify_content_row_max_width_and_margin") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -763,7 +763,7 @@ TEST_CASE( justify_content_row_max_width_and_margin) {
 
 }
 
-TEST_CASE( justify_content_column_min_height_and_margin) {
+TEST_CASE( "justify_content_column_min_height_and_margin") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -802,7 +802,7 @@ TEST_CASE( justify_content_column_min_height_and_margin) {
 
 }
 
-TEST_CASE( justify_content_colunn_max_height_and_margin) {
+TEST_CASE( "justify_content_colunn_max_height_and_margin") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignCenter);
@@ -842,7 +842,7 @@ TEST_CASE( justify_content_colunn_max_height_and_margin) {
 
 }
 
-TEST_CASE( justify_content_column_space_evenly) {
+TEST_CASE( "justify_content_column_space_evenly") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetJustifyContent(root, FlexAlignSpaceEvenly);
@@ -908,7 +908,7 @@ TEST_CASE( justify_content_column_space_evenly) {
 
 }
 
-TEST_CASE( justify_content_row_space_evenly) {
+TEST_CASE( "justify_content_row_space_evenly") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);

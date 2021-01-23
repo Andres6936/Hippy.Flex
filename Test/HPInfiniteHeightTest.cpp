@@ -22,7 +22,7 @@
 // This test isn't correct from the Flexbox standard standpoint,
 // because percentages are calculated with parent constraints.
 // However, we need to make sure we fail gracefully in this case, not returning NaN
-TEST_CASE( percent_absolute_position_infinite_height) {
+TEST_CASE( "percent_absolute_position_infinite_height") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
