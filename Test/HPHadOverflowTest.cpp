@@ -19,27 +19,28 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-using namespace ::testing;
+class HippyTest_HadOverflowTests
+{
+protected:
+	HippyTest_HadOverflowTests()
+	{
+		root = HPNodeNew();
+		HPNodeStyleSetWidth(root, 200);
+		HPNodeStyleSetHeight(root, 100);
+		HPNodeStyleSetFlexDirection(root, FLexDirectionColumn);
+		HPNodeStyleSetFlexWrap(root, FlexNoWrap);
+	}
 
-class HippyTest_HadOverflowTests : public Test {
- protected:
-  HippyTest_HadOverflowTests() {
-    root = HPNodeNew();
-    HPNodeStyleSetWidth(root, 200);
-    HPNodeStyleSetHeight(root, 100);
-    HPNodeStyleSetFlexDirection(root, FLexDirectionColumn);
-    HPNodeStyleSetFlexWrap(root, FlexNoWrap);
-  }
+	~HippyTest_HadOverflowTests()
+	{
+		HPNodeFreeRecursive(root);
 
-  ~HippyTest_HadOverflowTests() {
-    HPNodeFreeRecursive(root);
+	}
 
-  }
-
-  HPNodeRef root;
+	HPNodeRef root;
 };
 
-TEST_F(HippyTest_HadOverflowTests, children_overflow_no_wrap_and_no_flex_children) {
+TEST_CASE_FIXTURE(HippyTest_HadOverflowTests, "children_overflow_no_wrap_and_no_flex_children") {
   const HPNodeRef child0 = HPNodeNew();
   HPNodeStyleSetWidth(child0, 80);
   HPNodeStyleSetHeight(child0, 40);
@@ -54,10 +55,10 @@ TEST_F(HippyTest_HadOverflowTests, children_overflow_no_wrap_and_no_flex_childre
 
   HPNodeDoLayout(root, 200, 100);
 
-  ASSERT_TRUE(HPNodeLayoutGetHadOverflow(root));
+  REQUIRE(HPNodeLayoutGetHadOverflow(root));
 }
 
-TEST_F(HippyTest_HadOverflowTests, spacing_overflow_no_wrap_and_no_flex_children) {
+TEST_CASE_FIXTURE(HippyTest_HadOverflowTests, "spacing_overflow_no_wrap_and_no_flex_children") {
   const HPNodeRef child0 = HPNodeNew();
   HPNodeStyleSetWidth(child0, 80);
   HPNodeStyleSetHeight(child0, 40);
@@ -72,10 +73,10 @@ TEST_F(HippyTest_HadOverflowTests, spacing_overflow_no_wrap_and_no_flex_children
 
   HPNodeDoLayout(root, 200, 100);
 
-  ASSERT_TRUE(HPNodeLayoutGetHadOverflow(root));
+  REQUIRE(HPNodeLayoutGetHadOverflow(root));
 }
 
-TEST_F(HippyTest_HadOverflowTests, no_overflow_no_wrap_and_flex_children) {
+TEST_CASE_FIXTURE(HippyTest_HadOverflowTests, "no_overflow_no_wrap_and_flex_children") {
   const HPNodeRef child0 = HPNodeNew();
   HPNodeStyleSetWidth(child0, 80);
   HPNodeStyleSetHeight(child0, 40);
@@ -91,10 +92,10 @@ TEST_F(HippyTest_HadOverflowTests, no_overflow_no_wrap_and_flex_children) {
 
   HPNodeDoLayout(root, 200, 100);
 
-  ASSERT_FALSE(HPNodeLayoutGetHadOverflow(root));
+  REQUIRE_FALSE(HPNodeLayoutGetHadOverflow(root));
 }
 
-TEST_F(HippyTest_HadOverflowTests, hadOverflow_gets_reset_if_not_logger_valid) {
+TEST_CASE_FIXTURE(HippyTest_HadOverflowTests, "hadOverflow_gets_reset_if_not_logger_valid") {
   const HPNodeRef child0 = HPNodeNew();
   HPNodeStyleSetWidth(child0, 80);
   HPNodeStyleSetHeight(child0, 40);
@@ -109,15 +110,15 @@ TEST_F(HippyTest_HadOverflowTests, hadOverflow_gets_reset_if_not_logger_valid) {
 
   HPNodeDoLayout(root, 200, 100);
 
-  ASSERT_TRUE(HPNodeLayoutGetHadOverflow(root));
+  REQUIRE(HPNodeLayoutGetHadOverflow(root));
 
   HPNodeStyleSetFlexShrink(child1, 1);
 
   HPNodeDoLayout(root, 200, 100);
-  ASSERT_FALSE(HPNodeLayoutGetHadOverflow(root));
+  REQUIRE_FALSE(HPNodeLayoutGetHadOverflow(root));
 }
 
-TEST_F(HippyTest_HadOverflowTests, spacing_overflow_in_nested_nodes) {
+TEST_CASE_FIXTURE(HippyTest_HadOverflowTests, "spacing_overflow_in_nested_nodes") {
   const HPNodeRef child0 = HPNodeNew();
   HPNodeStyleSetWidth(child0, 80);
   HPNodeStyleSetHeight(child0, 40);
@@ -136,5 +137,5 @@ TEST_F(HippyTest_HadOverflowTests, spacing_overflow_in_nested_nodes) {
 
   HPNodeDoLayout(root, 200, 100);
 
-  ASSERT_TRUE(HPNodeLayoutGetHadOverflow(root));
+  REQUIRE(HPNodeLayoutGetHadOverflow(root));
 }
