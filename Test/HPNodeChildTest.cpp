@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-TEST_CASE( reset_layout_when_child_removed) {
+TEST_CASE( "reset_layout_when_child_removed") {
   const HPNodeRef root = HPNodeNew();
 
   const HPNodeRef root_child0 = HPNodeNew();
@@ -29,17 +29,17 @@ TEST_CASE( reset_layout_when_child_removed) {
 
   HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
-  ASSERT_EQ(0, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_EQ(0, HPNodeLayoutGetTop(root_child0));
-  ASSERT_EQ(100, HPNodeLayoutGetWidth(root_child0));
-  ASSERT_EQ(100, HPNodeLayoutGetHeight(root_child0));
+  REQUIRE_EQ(0, HPNodeLayoutGetLeft(root_child0));
+  REQUIRE_EQ(0, HPNodeLayoutGetTop(root_child0));
+  REQUIRE_EQ(100, HPNodeLayoutGetWidth(root_child0));
+  REQUIRE_EQ(100, HPNodeLayoutGetHeight(root_child0));
 
   HPNodeRemoveChild(root, root_child0);
 
-  ASSERT_EQ(0, HPNodeLayoutGetLeft(root_child0));
-  ASSERT_EQ(0, HPNodeLayoutGetTop(root_child0));
-  ASSERT_TRUE(isUndefined(HPNodeLayoutGetWidth(root_child0)));
-  ASSERT_TRUE(isUndefined(HPNodeLayoutGetHeight(root_child0)));
+  REQUIRE_EQ(0, HPNodeLayoutGetLeft(root_child0));
+  REQUIRE_EQ(0, HPNodeLayoutGetTop(root_child0));
+  REQUIRE(isUndefined(HPNodeLayoutGetWidth(root_child0)));
+  REQUIRE(isUndefined(HPNodeLayoutGetHeight(root_child0)));
 
   HPNodeFreeRecursive(root);
 }
