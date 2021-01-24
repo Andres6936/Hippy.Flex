@@ -40,7 +40,7 @@
 //
 //}
 
-TEST_CASE( recalculate_resolvedDimonsion_onchange) {
+TEST_CASE( "recalculate_resolvedDimonsion_onchange") {
   const HPNodeRef root = HPNodeNew();
 
   const HPNodeRef root_child0 = HPNodeNew();

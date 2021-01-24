@@ -19,7 +19,7 @@
 #include <doctest/doctest.h>
 #include <Hippy/Flex/Hippy.h>
 
-TEST_CASE( rounding_flex_basis_flex_grow_row_width_of_100) {
+TEST_CASE( "rounding_flex_basis_flex_grow_row_width_of_100") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -85,7 +85,7 @@ TEST_CASE( rounding_flex_basis_flex_grow_row_width_of_100) {
 
 }
 
-TEST_CASE( rounding_flex_basis_flex_grow_row_prime_number_width) {
+TEST_CASE( "rounding_flex_basis_flex_grow_row_prime_number_width") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -179,7 +179,7 @@ TEST_CASE( rounding_flex_basis_flex_grow_row_prime_number_width) {
 
 }
 
-TEST_CASE( rounding_flex_basis_flex_shrink_row) {
+TEST_CASE( "rounding_flex_basis_flex_shrink_row") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -246,7 +246,7 @@ TEST_CASE( rounding_flex_basis_flex_shrink_row) {
 
 }
 
-TEST_CASE( rounding_flex_basis_overrides_main_size) {
+TEST_CASE( "rounding_flex_basis_overrides_main_size") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -315,7 +315,7 @@ TEST_CASE( rounding_flex_basis_overrides_main_size) {
 
 }
 
-TEST_CASE( rounding_total_fractial) {
+TEST_CASE( "rounding_total_fractial") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 87.4f);
@@ -384,7 +384,7 @@ TEST_CASE( rounding_total_fractial) {
 
 }
 
-TEST_CASE( rounding_total_fractial_nested) {
+TEST_CASE( "rounding_total_fractial_nested") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 87.4f);
@@ -487,7 +487,7 @@ TEST_CASE( rounding_total_fractial_nested) {
 
 }
 
-TEST_CASE( rounding_fractial_input_1) {
+TEST_CASE( "rounding_fractial_input_1") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -556,7 +556,7 @@ TEST_CASE( rounding_fractial_input_1) {
 
 }
 
-TEST_CASE( rounding_fractial_input_2) {
+TEST_CASE( "rounding_fractial_input_2") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetWidth(root, 100);
@@ -625,7 +625,7 @@ TEST_CASE( rounding_fractial_input_2) {
 
 }
 
-TEST_CASE( rounding_fractial_input_3) {
+TEST_CASE( "rounding_fractial_input_3") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetPosition(root, CSSTop, 0.3f);
@@ -695,7 +695,7 @@ TEST_CASE( rounding_fractial_input_3) {
 
 }
 
-TEST_CASE( rounding_fractial_input_4) {
+TEST_CASE( "rounding_fractial_input_4") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetPosition(root, CSSTop, 0.7f);
@@ -765,7 +765,7 @@ TEST_CASE( rounding_fractial_input_4) {
 
 }
 
-TEST_CASE( rounding_inner_node_controversy_horizontal) {
+TEST_CASE( "rounding_inner_node_controversy_horizontal") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
@@ -848,7 +848,7 @@ TEST_CASE( rounding_inner_node_controversy_horizontal) {
 
 }
 
-TEST_CASE( rounding_inner_node_controversy_vertical) {
+TEST_CASE( "rounding_inner_node_controversy_vertical") {
 
   const HPNodeRef root = HPNodeNew();
   HPNodeStyleSetHeight(root, 320);
