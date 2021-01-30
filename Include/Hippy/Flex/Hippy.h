@@ -31,6 +31,12 @@ void HPNodeStyleSetWidth(HPNodeRef node, float width);
 void HPNodeStyleSetHeight(HPNodeRef node, float height);
 bool HPNodeSetMeasureFunc(HPNodeRef node, HPMeasureFunc _measure);
 void HPNodeStyleSetFlex(HPNodeRef node, float flex);
+
+/**
+ * @param node The flex container to apply the flex grow.
+ * @param flexGrow The flex-grow property sets the flex grow factor to the
+ * provided <number>. Negative numbers are invalid.
+ */
 void HPNodeStyleSetFlexGrow(HPNodeRef node, float flexGrow);
 void HPNodeStyleSetFlexShrink(HPNodeRef node, float flexShrink);
 void HPNodeStyleSetFlexBasis(HPNodeRef node, float flexBasis);
