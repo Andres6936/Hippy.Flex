@@ -54,7 +54,26 @@ typedef enum {
   FLexDirectionColumnReverse
 } FlexDirection;
 
-//flex-wrap: nowrap | wrap | wrap-reverse
+/**
+ * Flex Wrap: nowrap | wrap | wrap-reverse
+ * <br><br>
+ *
+ * The flex-wrap property controls whether the flex container is single-line or
+ * multi-line, and the direction of the cross-axis, which determines the
+ * direction new lines are stacked in. <br><br>
+ *
+ * - Nowrap: The flex container is single-line. <br><br>
+ *
+ * - Wrap: The flex container is multi-line. <br><br>
+ *
+ * - Wrap Reverse: Same as wrap. <br><br>
+ *
+ * For the values that are not wrap-reverse, the cross-start direction is
+ * equivalent to either the inline-start or block-start direction of the current
+ * writing mode (whichever is in the cross axis) and the cross-end direction is
+ * the opposite direction of cross-start. When flex-wrap is wrap-reverse, the
+ * cross-start and cross-end directions are swapped.
+ */
 typedef enum {
   FlexNoWrap,
   FlexWrap,
