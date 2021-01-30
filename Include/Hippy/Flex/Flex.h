@@ -23,7 +23,30 @@ typedef enum {
   DirectionRTL
 } HPDirection;
 
-//flex-direction : row | row-reverse | column | column-reverse
+/**
+ * Flex Direction : row | row-reverse | column | column-reverse
+ * <br><br>
+ *
+ * The flex-direction property specifies how flex items are placed in the flex
+ * container, by setting the direction of the flex container’s main axis. This
+ * determines the direction in which flex items are laid out. <br><br>
+ *
+ * - Row: The flex container’s main axis has the same orientation as the inline
+ * 	axis of the current writing mode. The main-start and main-end directions are
+ * 	equivalent to the inline-start and inline-end directions, respectively, of
+ * 	the current writing mode. <br><br>
+ *
+ * - Row Reverse: Same as row, except the main-start and main-end directions are
+ * 	swapped. <br><br>
+ *
+ * - Column: The flex container’s main axis has the same orientation as the
+ * 	block axis of the current writing mode. The main-start and main-end
+ * 	directions are equivalent to the block-start and block-end directions,
+ * 	respectively, of the current writing mode. <br><br>
+ *
+ * - Column Reverse: Same as column, except the main-start and main-end
+ * 	directions are swapped. <br><br>
+ */
 typedef enum {
   FLexDirectionRow,
   FLexDirectionRowReverse,
