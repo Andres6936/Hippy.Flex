@@ -38,6 +38,12 @@ void HPNodeStyleSetFlex(HPNodeRef node, float flex);
  * provided <number>. Negative numbers are invalid.
  */
 void HPNodeStyleSetFlexGrow(HPNodeRef node, float flexGrow);
+
+/**
+ * @param node The flex container to apply the flex shrink.
+ * @param flexShrink The flex-shrink property sets the flex shrink factor to
+ * the provided <number>. Negative numbers are invalid.
+ */
 void HPNodeStyleSetFlexShrink(HPNodeRef node, float flexShrink);
 void HPNodeStyleSetFlexBasis(HPNodeRef node, float flexBasis);
 void HPNodeStyleSetFlexDirection(HPNodeRef node, FlexDirection direction);
