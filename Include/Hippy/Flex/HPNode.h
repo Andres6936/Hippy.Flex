@@ -33,6 +33,15 @@ typedef HPSize (*HPMeasureFunc)(HPNodeRef node, float width,
                                 void * layoutContext);
 typedef void (*HPDirtiedFunc)(HPNodeRef node);
 
+/**
+ * The specification describes a CSS box model optimized for user interface
+ * design. In the flex layout model, the children of a flex container can be
+ * laid out in any direction, and can “flex” their sizes, either growing to
+ * fill unused space or shrinking to avoid overflowing the parent. Both
+ * horizontal and vertical alignment of the children can be easily manipulated.
+ * Nesting of these boxes (horizontal inside vertical, or vertical inside
+ * horizontal) can be used to build layouts in two dimensions.
+ */
 class HPNode {
  public:
   HPNode();
