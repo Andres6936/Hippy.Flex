@@ -1,5 +1,3 @@
-ENABLE_TESTING()
-
 INCLUDE(CMakeModules/CPM.cmake)
 
 # Added Doctest as a Dependency
